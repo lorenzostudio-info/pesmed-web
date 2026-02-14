@@ -68,3 +68,7 @@
     <link rel="alternate" hreflang="{{ link.lang }}" href="{{ site.url }}{{ link.url }}">
 {% endfor %}
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ site.defaultlang }}/">
+
+{% if robots == "noindex" %}
+<meta name="robots" content="noindex, follow">
+{% endif %}
