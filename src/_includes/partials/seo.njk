@@ -1,0 +1,72 @@
+{# --- META DEFAULTS --- #}
+{% set siteTitle = translations[lang].siteTitle %}
+{% set metaTitle = (title ~ " · " ~ siteTitle)if title else 
+    siteTitle %}
+{% set metaDescription = description if description else 
+    site.description %}
+{% set canonicalUrl = site.url ~ page.url %}
+{% set ogImage = (site.url ~ image)if image else 
+    (site.url ~ "/assets/social/og.png") %}
+
+{% set isArticle = page.url and("/articles/" in page.url) %}
+{% set ogType = "article" if isArticle else 
+    "website" %}
+
+<title>{{ metaTitle }}</title>
+<meta name="description" content="{{ metaDescription }}">
+
+<link rel="canonical" href="{{ canonicalUrl }}">
+
+{# --- OPEN GRAPH --- #}
+<meta property="og:title" content="{{ metaTitle }}">
+<meta property="og:description" content="{{ metaDescription }}">
+<meta property="og:url" content="{{ canonicalUrl }}">
+<meta property="og:type" content="{{ ogType }}">
+<meta property="og:image" content="{{ ogImage }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ metaTitle }}">
+<meta name="twitter:description" content="{{ metaDescription }}">
+<meta name="twitter:image" content="{{ ogImage }}">
+
+{# --- STRUCTURED DATA (Schema.org) --- #}
+
+{% if page.url == ("/" | locale_url) %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": {{ siteTitle | dump }},
+            "url": "{{ site.url }}{{ "/" | locale_url }}"
+        }
+    </script>
+
+{% elif isArticle and title %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": {{ title | dump }},
+            "description": {{ metaDescription | dump }},
+            "inLanguage": {{ lang | dump }},
+            "datePublished": {{ date }},
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ canonicalUrl }}"
+            },
+            "author": {
+                "@type": "Person",
+                "name": {{ site.author | dump }}
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": {{ site.name | dump }}
+            }
+        }
+    </script>
+{% endif %}
+
+{% for link in page.url | locale_links %}
+    <link rel="alternate" hreflang="{{ link.lang }}" href="{{ site.url }}{{ link.url }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.defaultlang }}">

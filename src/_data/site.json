@@ -1,5 +1,7 @@
 {
   "name": "11ty-base",
   "url": "https://example.com",
-  "author": "11ty-base"
+  "author": "11ty-base",
+  "description": "11ty-base is a minimal Eleventy starter with i18n (EN/IT) and RSS feeds, designed for clean, fast static sites.",
+  "defaultlang": "it"
 }
