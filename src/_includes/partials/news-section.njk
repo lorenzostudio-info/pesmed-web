@@ -1,22 +1,17 @@
----
-layout: layouts/base.njk
-title: News
-lang: it
-description: "Ultime notizie ed eventi PesMed nel settore dei dispositivi medici."
----
-
-{% set breadcrumbs = [{label: translations[lang].articles}] %}
-{% include "partials/breadcrumb.njk" %}
-
-{% set pageTitle = translations[lang].newsTitle %}
-{% include "partials/page-header.njk" %}
-
-<section class="py-12 md:py-20">
+{# News section - used on homepage, shows latest articles #}
+{% set articleCollection = collections["articles_" + lang] %}
+<section class="py-16 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ translations[lang].newsTitle }}</h2>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {% for post in collections.articles_it %}
+      {% for post in articleCollection | head(6) %}
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group">
-          {% if post.data.image and not "/assets/social" in post.data.image %}
+          {% if post.data.image and "/assets/" in post.data.image %}
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
+          {% elif post.data.image %}
             <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
           {% else %}
             <div class="w-full h-48 bg-blue-100 flex items-center justify-center">
@@ -24,7 +19,7 @@ description: "Ultime notizie ed eventi PesMed nel settore dei dispositivi medici
             </div>
           {% endif %}
           <div class="p-6">
-            <time class="text-sm text-blue-600 font-medium uppercase" datetime="{{ post.date.toISOString() }}">
+            <time class="text-sm text-blue-600 font-medium" datetime="{{ post.date.toISOString() }}">
               {{ post.date.toISOString().slice(0,10) }}
             </time>
             <h3 class="mt-2 text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -35,13 +30,6 @@ description: "Ultime notizie ed eventi PesMed nel settore dei dispositivi medici
           </div>
         </article>
       {% endfor %}
-    </div>
-
-    <div class="mt-12 text-center">
-      <a href="{{ '/articles/feed.xml' | locale_url }}" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
-        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
-        {{ translations[lang].rssFeed }}
-      </a>
     </div>
   </div>
 </section>

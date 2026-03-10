@@ -1,0 +1,18 @@
+{# Breadcrumb partial - pass breadcrumbs array [{label, url}] #}
+<nav class="bg-gray-100 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <ol class="flex items-center space-x-2 text-sm text-gray-500">
+      <li><a href="{{ '/' | locale_url }}" class="hover:text-blue-600 transition-colors">{{ translations[lang].siteTitle }}</a></li>
+      {% for crumb in breadcrumbs %}
+        <li class="flex items-center space-x-2">
+          <span>›</span>
+          {% if crumb.url %}
+            <a href="{{ crumb.url }}" class="hover:text-blue-600 transition-colors">{{ crumb.label }}</a>
+          {% else %}
+            <span class="text-gray-700 font-medium">{{ crumb.label }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</nav>

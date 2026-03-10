@@ -1,13 +1,17 @@
 ---
-layout: layouts/base.njk
-title: Primo Articolo
-description: Scopri come configurare i18n e RSS in Eleventy con un setup minimale, pronto da copiare in qualsiasi sito statico.
-date: 2026-02-02
+layout: layouts/article.njk
+title: "I-EUS PALERMO"
+description: "2/5 Maggio 2024 - EUS Academy Palermo - Associazione Italiana Gastroenterologi & Endoscopisti Digestivi Ospedalieri"
+date: 2024-05-02
 lang: it
 tags:
   - articles
-  - eleventy
-image: /assets/social/og.png
+  - events
+image: "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/07/cattura.png"
 ---
 
-Questo è un articolo minimale in italiano per **11ty-base**.
+2/5 Maggio 2024
+
+**EUS Academy Palermo**
+
+ASSOCIAZIONE ITALIANA GASTROENTEROLOGI & ENDOSCOPISTI DIGESTIVI OSPEDALIERI

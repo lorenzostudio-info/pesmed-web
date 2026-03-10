@@ -1,0 +1,25 @@
+{# Products section - used on homepage #}
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ translations[lang].productsTitle }}</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto text-lg">{{ translations[lang].productsIntro }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {% for product in products %}
+        <a href="{{ '/products/' | locale_url }}{{ product.slug }}/" class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6 flex flex-col">
+          <span class="text-blue-600 font-bold text-sm mb-2">{{ product.number }}</span>
+          <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">{{ product.name[lang] | default(product.name.it) }}</h3>
+          <p class="text-sm text-gray-500 mt-auto">
+            {% if product.manufacturerUrl %}
+              {{ product.manufacturer }}
+            {% else %}
+              {{ product.manufacturer }}
+            {% endif %}
+          </p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,14 +1,15 @@
 {# --- META DEFAULTS --- #}
 {% set siteTitle = translations[lang].siteTitle %}
-{% set metaTitle = (title ~ " · " ~ siteTitle)if title else 
+{% set metaTitle = (title ~ " · " ~ siteTitle) if title else 
     siteTitle %}
 {% set metaDescription = description if description else 
     site.description %}
 {% set canonicalUrl = site.url ~ page.url %}
-{% set ogImage = (site.url ~ image)if image else 
-    (site.url ~ "/assets/social/og.png") %}
+{% set ogImage = (site.url ~ image) if image else 
+    site.logo %}
 
-{% set isArticle = page.url and("/articles/" in page.url) %}
+{% set isArticle = page.url and ("/articles/" in page.url) %}
+{% set isProduct = page.url and ("/products/" in page.url) %}
 {% set ogType = "article" if isArticle else 
     "website" %}
 

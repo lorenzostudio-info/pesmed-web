@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: Prodotti
+lang: it
+description: "La gamma di prodotti PesMed offre ai pazienti vantaggi grazie alla leadership nella ricerca, sviluppo, produzione e design innovativo."
+permalink: /it/products/
+---
+
+{% set breadcrumbs = [{label: translations[lang].products}] %}
+{% include "partials/breadcrumb.njk" %}
+
+{% set pageTitle = translations[lang].productsTitle %}
+{% include "partials/page-header.njk" %}
+
+<section class="py-12 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-gray-600 max-w-3xl mx-auto text-lg text-center mb-12">{{ translations[lang].productsIntro }}</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for product in products %}
+        <a href="/it/products/{{ product.slug }}/" class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+          {% if product.image %}
+            <img src="{{ product.image }}" alt="{{ product.name[lang] }}" class="w-full h-48 object-contain bg-gray-50 p-4">
+          {% else %}
+            <div class="w-full h-48 bg-blue-50 flex items-center justify-center">
+              <span class="text-blue-400 text-5xl font-bold">{{ product.number }}</span>
+            </div>
+          {% endif %}
+          <div class="p-6">
+            <span class="text-blue-600 font-bold text-sm">{{ product.number }}</span>
+            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mt-1">{{ product.name[lang] }}</h3>
+            <p class="text-sm text-gray-500 mt-2">{{ product.manufacturer }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

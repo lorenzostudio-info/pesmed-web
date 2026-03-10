@@ -1,3 +1,40 @@
-<footer>
-  <small>© {{ site.name }} · <a href="{{ "/articles/feed.xml" | locale_url }}">RSS</a></small>
+<footer class="bg-gray-900 text-gray-300">
+  {# Upper footer with columns #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {# Logo and description #}
+      <div>
+        <img src="{{ site.footerLogo }}" alt="{{ site.name }}" class="h-16 w-auto mb-4 brightness-200">
+        <p class="text-sm text-gray-400">{{ translations[lang].aboutText }}</p>
+      </div>
+
+      {# Products links #}
+      <div>
+        <h4 class="text-white font-semibold mb-4">{{ translations[lang].products }}</h4>
+        <ul class="space-y-2 text-sm">
+          {% for product in products %}
+            <li><a href="{{ '/products/' | locale_url }}{{ product.slug }}/" class="hover:text-white transition-colors">{{ product.name[lang] | default(product.name.it) }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {# Quick links #}
+      <div>
+        <h4 class="text-white font-semibold mb-4">{{ translations[lang].followUs }}</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="{{ '/' | locale_url }}" class="hover:text-white transition-colors">{{ translations[lang].home }}</a></li>
+          <li><a href="{{ '/articles/' | locale_url }}" class="hover:text-white transition-colors">{{ translations[lang].articles }}</a></li>
+          <li><a href="{{ '/contact/' | locale_url }}" class="hover:text-white transition-colors">{{ translations[lang].contact }}</a></li>
+          <li><a href="{{ '/articles/feed.xml' | locale_url }}" class="hover:text-white transition-colors">{{ translations[lang].rssFeed }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {# Bottom bar #}
+  <div class="border-t border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
+      <p>{{ translations[lang].footerCopyright }} <a href="https://www.lorenzostudio.info/" class="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener">Lorenzo Studio</a>. {{ translations[lang].allRightsReserved }}</p>
+    </div>
+  </div>
 </footer>

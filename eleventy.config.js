@@ -5,13 +5,22 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 export default async function(eleventyConfig) {
 	
 	// Image Transform works independently, takes <img> on html and transforms automatically
-	eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+		extensions: "html",
+		formats: ["webp", "jpeg"],
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async",
+		},
+		// Skip remote images for now (we use URL references)
+		urlPath: "/assets/img/",
+		outputDir: "./_site/assets/img/",
+	});
 
 	// When site is multi-lingual
 	eleventyConfig.addPlugin(I18nPlugin, {
-		defaultLanguage: "it", // If client wants, could be italian
-		errorMode: "strict", // throw an error if content is missing at /en/slug
-		// errorMode: "allow-fallback", // only throw an error when the content is missing at both /en/slug and /slug
+		defaultLanguage: "it",
+		errorMode: "allow-fallback",
 	});
 
 	// RSS: one feed per language
@@ -21,10 +30,10 @@ export default async function(eleventyConfig) {
 		collection: { name: "articles_en", limit: 0 },
 		metadata: {
 		language: "en",
-		title: "11ty-base Articles (EN)",
-		subtitle: "Tiny demo feed for 11ty-base (English).",
-		base: "https://example.com/",
-		author: { name: "11ty-base" }
+		title: "PesMed News (EN)",
+		subtitle: "Latest news and events from PesMed.",
+		base: "https://pesmed.lorenzostudio.info/",
+		author: { name: "PesMed" }
 		}
 	});
 
@@ -34,10 +43,10 @@ export default async function(eleventyConfig) {
 		collection: { name: "articles_it", limit: 0 },
 		metadata: {
 		language: "it",
-		title: "11ty-base Articoli (IT)",
-		subtitle: "Feed demo minimale per 11ty-base (Italiano).",
-		base: "https://example.com/",
-		author: { name: "11ty-base" }
+		title: "PesMed News (IT)",
+		subtitle: "Ultime notizie ed eventi da PesMed.",
+		base: "https://pesmed.lorenzostudio.info/",
+		author: { name: "PesMed" }
 		}
 	});
 
@@ -47,6 +56,18 @@ export default async function(eleventyConfig) {
 
 	eleventyConfig.addCollection("articles_it", (collectionApi) => {
 		return collectionApi.getFilteredByGlob("src/it/articles/*.md").sort((a, b) => b.date - a.date);
+	});
+
+	// Nunjucks filter: head (take first N items from array)
+	eleventyConfig.addFilter("head", (array, n) => {
+		if (!Array.isArray(array)) return [];
+		return array.slice(0, n);
+	});
+
+	// Nunjucks filter: find product by slug
+	eleventyConfig.addFilter("findBySlug", (arr, slug) => {
+		if (!Array.isArray(arr) || !slug) return {};
+		return arr.find(item => item.slug === slug) || {};
 	});
 
 	// Passtrough
@@ -59,6 +80,6 @@ export default async function(eleventyConfig) {
 		includes: "_includes",
 		data: "_data"
 		},
-		templateFormats: ["njk", "md", "css"]
+		templateFormats: ["njk", "md"]
 	};
 };

@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "prosense",
+    "number": "01",
+    "name": {
+      "en": "Prosense: Cryotherapy",
+      "it": "Prosense: Crioterapia"
+    },
+    "manufacturer": "IceCure",
+    "manufacturerUrl": "https://www.icecure-medical.com/",
+    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ProSense-without-shadow-1-234x300.png",
+    "images": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ice13916_amended_V001-200x300.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ProSense-without-shadow-1-234x300.png",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/IceBall-in-Gel-300x200.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/criosonda-sterile-monouso-icecure.png"
+    ],
+    "description": {
+      "en": "The ProSense system is a device for cryo-ablation of tumour lesions, both benign and malignant. The cryostat technology is 3rd generation, operating with liquid nitrogen (-196°). The device can operate both percutaneously and intra-operatively using a single probe called a cryo-probe. The specific cryo-probes of the ProSense system are available in various calibres and lengths. ProSense cryoablation system - Code FAS3100000.",
+      "it": "Il sistema ProSense è un dispositivo per la crio-ablazione di lesioni tumorali, benigne e maligne. La tecnologia del criostato è di III generazione, operante ad azoto liquido (-196°). Il dispositivo può operare sia per via percutanea che per via intra-operatoria attraverso l'utilizzo di una singola sonda denominata crio-sonda. Le crio-sonde specifiche del sistema ProSense sono disponibili in diversi calibri e diverse lunghezze. Sistema per crioablazione ProSense™ - Codice FAS3100000."
+    },
+    "moreInfo": {
+      "en": "For more information, you can download the two brochures from the following links:",
+      "it": "Per ulteriori informazioni è possibile scaricare i due depliant scaricabili dai seguenti link:"
+    },
+    "brochures": [
+      {
+        "name": "ProSense Quick Reference Guide",
+        "url": "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/10/DMS-23014_Rev-B-A4_Probe-Brochure.pdf"
+      },
+      {
+        "name": "ProSense Product Informations",
+        "url": "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/10/ProSense_Product_Brochure_10853_-Rev_-D_printcopy.pdf"
+      }
+    ],
+    "youtubeChannel": "https://www.youtube.com/channel/UClq8QWZZDfNYwfKl6GSXRmw",
+    "youtubeLabel": {
+      "en": "IceCure YouTube Channel",
+      "it": "Canale YouTube IceCure"
+    }
+  },
+  {
+    "slug": "micromate",
+    "number": "02",
+    "name": {
+      "en": "Micromate: Robotic Navigation",
+      "it": "Micromate: Navigazione Robotica"
+    },
+    "manufacturer": "Interventional Systems",
+    "manufacturerUrl": "https://www.interventional-systems.com/",
+    "image": "",
+    "images": [],
+    "description": {
+      "en": "Micromate is a robotic navigation system designed for precision-guided interventional procedures.",
+      "it": "Micromate è un sistema di navigazione robotica progettato per procedure interventistiche guidate con precisione."
+    }
+  },
+  {
+    "slug": "endove",
+    "number": "03",
+    "name": {
+      "en": "EndoVE: Endoscopic Reversible Electroporation",
+      "it": "EndoVE: Elettroporazione Reversibile Endoscopica"
+    },
+    "manufacturer": "Mirai Medical",
+    "manufacturerUrl": "",
+    "image": "",
+    "images": [],
+    "description": {
+      "en": "EndoVE is a system for endoscopic reversible electroporation procedures.",
+      "it": "EndoVE è un sistema per procedure di elettroporazione reversibile endoscopica."
+    }
+  },
+  {
+    "slug": "cutis",
+    "number": "04",
+    "name": {
+      "en": "CUTIS: Cutaneous Reversible Electroporation",
+      "it": "CUTIS: Elettroporazione Reversibile Cutanea"
+    },
+    "manufacturer": "Mirai Medical",
+    "manufacturerUrl": "",
+    "image": "",
+    "images": [],
+    "description": {
+      "en": "CUTIS is a system for cutaneous reversible electroporation procedures.",
+      "it": "CUTIS è un sistema per procedure di elettroporazione reversibile cutanea."
+    }
+  },
+  {
+    "slug": "ifix",
+    "number": "05",
+    "name": {
+      "en": "IFIX",
+      "it": "IFIX"
+    },
+    "manufacturer": "Interventional Systems",
+    "manufacturerUrl": "",
+    "image": "",
+    "images": [],
+    "description": {
+      "en": "IFIX is a precision fixation system for interventional procedures.",
+      "it": "IFIX è un sistema di fissaggio di precisione per procedure interventistiche."
+    }
+  },
+  {
+    "slug": "pearlfit",
+    "number": "06",
+    "name": {
+      "en": "PearlFit",
+      "it": "PearlFit"
+    },
+    "manufacturer": "PearlTechnology",
+    "manufacturerUrl": "",
+    "image": "",
+    "images": [],
+    "description": {
+      "en": "PearlFit is an advanced medical device by PearlTechnology.",
+      "it": "PearlFit è un dispositivo medico avanzato di PearlTechnology."
+    }
+  },
+  {
+    "slug": "piur",
+    "number": "07",
+    "name": {
+      "en": "PIUR Infinity: 3D Ultrasonic Tomography",
+      "it": "PIUR Infinity: Tomografia Ecografica 3D"
+    },
+    "manufacturer": "Piur Imaging",
+    "manufacturerUrl": "",
+    "image": "",
+    "images": [],
+    "description": {
+      "en": "PIUR Infinity is a 3D ultrasonic tomography system by Piur Imaging.",
+      "it": "PIUR Infinity è un sistema di tomografia ecografica 3D di Piur Imaging."
+    }
+  }
+]

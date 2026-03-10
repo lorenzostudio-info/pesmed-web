@@ -2,11 +2,10 @@
 layout: layouts/base.njk
 title: Home
 lang: it
-description: 11ty-base è un minimal setup per Eleventy con i18n (EN/IT) e RSS feeds, con un design semplice ed ottimizzato.
+description: "Pes Med è un'azienda italiana con una profonda competenza nell'organizzazione della distribuzione per il settore dei dispositivi medici."
 ---
 
-<p>{{ translations[lang].intro }}</p>
-
-<p>
-  RSS: <a href="/it/articles/feed.xml">/it/articles/feed.xml</a>
-</p>
+{% include "partials/hero.njk" %}
+{% include "partials/about-section.njk" %}
+{% include "partials/products-section.njk" %}
+{% include "partials/news-section.njk" %}

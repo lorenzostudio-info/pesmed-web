@@ -1,13 +1,17 @@
 ---
-layout: layouts/base.njk
-title: Second Article
-description: Learn how Eleventy handles i18n and RSS with a minimal setup you can copy into any static site.
-date: 2026-02-10
+layout: layouts/article.njk
+title: "SIRM MILAN 2024"
+description: "20-23 June 2024 Milan, Allianz MiCo - The Next Generation - 1st Joint Congress of the Radiological Area"
+date: 2024-04-10
 lang: en
 tags:
   - articles
-  - eleventy
-image: /assets/social/og.png
+  - events
+image: "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/07/bozza_header.jpg"
 ---
 
-Just another post to make the RSS not look empty.
+20-23 June 2024 Milan, Allianz MiCo
+
+**The Next Generation**
+
+1st Joint Congress of the Radiological Area

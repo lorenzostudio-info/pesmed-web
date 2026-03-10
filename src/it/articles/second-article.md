@@ -1,13 +1,17 @@
 ---
-layout: layouts/base.njk
-title: Secondo articolo
-description: Scopri come configurare i18n e RSS in Eleventy con un setup minimale, pronto da copiare in qualsiasi sito statico.
-date: 2026-02-11
+layout: layouts/article.njk
+title: "SIRM MILANO 2024"
+description: "20-23 giugno 2024 Milano, Allianz MiCo - The Next Generation - 1° Congresso congiunto dell'Area Radiologica"
+date: 2024-04-10
 lang: it
 tags:
   - articles
-  - eleventy
-image: /assets/social/og.png
+  - events
+image: "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/07/bozza_header.jpg"
 ---
 
-Secondo post, così il feed RSS ha almeno due item.
+20-23 giugno 2024 Milano, Allianz MiCo
+
+**The Next Generation**
+
+1° Congresso congiunto dell'Area Radiologica

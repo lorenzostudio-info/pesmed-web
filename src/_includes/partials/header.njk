@@ -1,16 +1,48 @@
-<header>
-  <h1><a href="{{ "/" | locale_url }}">{{ translations[lang].siteTitle }}</a></h1>
+<header x-data="{ open: false }" class="bg-white shadow-sm fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      {# Logo #}
+      <a href="{{ '/' | locale_url }}" class="flex-shrink-0">
+        <img src="{{ site.logo }}" alt="{{ site.name }}" class="h-14 w-auto">
+      </a>
 
-  <nav>
-    <a href="{{ "/" | locale_url }}">{{ translations[lang].home }}</a>
-    <a href="{{ "/articles/" | locale_url }}">{{ translations[lang].articles }}</a>
-  </nav>
+      {# Desktop nav #}
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="{{ '/' | locale_url }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{{ translations[lang].home }}</a>
+        <a href="{{ '/products/' | locale_url }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{{ translations[lang].products }}</a>
+        <a href="{{ '/articles/' | locale_url }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{{ translations[lang].articles }}</a>
+        <a href="{{ '/contact/' | locale_url }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{{ translations[lang].contact }}</a>
+      </nav>
 
-  <p>
-    <small>{{ translations[lang].language }}:</small>
-    {% set links = page.url | locale_links %}
-    {% for l in links %}
-      <a href="{{ l.url }}">{{ l.lang | upper }}</a>{% if not loop.last %} · {% endif %}
-    {% endfor %}
-  </p>
+      {# Language switch + mobile toggle #}
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-1 text-sm">
+          {% set links = page.url | locale_links %}
+          {% for l in links %}
+            <a href="{{ l.url }}" class="px-2 py-1 rounded {% if l.lang == lang %}bg-blue-600 text-white{% else %}text-gray-600 hover:bg-gray-100{% endif %} transition-colors">{{ l.lang | upper }}</a>
+          {% endfor %}
+        </div>
+
+        {# Mobile hamburger #}
+        <button @click="open = !open" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle menu">
+          <svg x-show="!open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg x-show="open" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    {# Mobile menu #}
+    <div x-show="open" x-cloak @click.outside="open = false" class="md:hidden pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="{{ '/' | locale_url }}" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded font-medium">{{ translations[lang].home }}</a>
+        <a href="{{ '/products/' | locale_url }}" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded font-medium">{{ translations[lang].products }}</a>
+        <a href="{{ '/articles/' | locale_url }}" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded font-medium">{{ translations[lang].articles }}</a>
+        <a href="{{ '/contact/' | locale_url }}" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded font-medium">{{ translations[lang].contact }}</a>
+      </nav>
+    </div>
+  </div>
 </header>
