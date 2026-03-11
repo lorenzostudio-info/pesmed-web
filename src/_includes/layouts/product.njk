@@ -17,8 +17,15 @@ layout: layouts/base.njk
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       {# Product images #}
       <div>
+        {% if productData.videoUrl %}
+          <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/{{ (productData.videoUrl | replace('https://www.youtube.com/watch?v=', '') | replace('https://youtu.be/', '')) }}" title="{{ productData.name[lang] if productData.name[lang] else title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="px-4 py-2 text-sm text-gray-600">{{ translations[lang].watchVideo }}</div>
+          </div>
+        {% endif %}
+
         {% if productData.images and productData.images.length %}
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {% for img in productData.images %}
               <img src="{{ img }}" alt="{{ productData.name[lang] if productData.name[lang] else title }}" class="rounded-lg shadow-md w-full h-auto object-contain bg-gray-50 p-4">
             {% endfor %}
@@ -34,9 +41,49 @@ layout: layouts/base.njk
           <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">{{ translations[lang].manufacturer }}: {{ productData.manufacturer }}</span>
         </div>
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">{{ productData.name[lang] if productData.name[lang] else title }}</h2>
+        {% if productData.subtitle %}
+          <p class="text-lg text-blue-700 font-semibold -mt-3 mb-5">{{ productData.subtitle[lang] if productData.subtitle[lang] else productData.subtitle.it }}</p>
+        {% endif %}
         <div class="prose prose-lg text-gray-600 leading-relaxed">
           <p>{{ productData.description[lang] if productData.description[lang] else productData.description.it }}</p>
         </div>
+
+        {% set sectionItems = [] %}
+        {% if productData.contentSections and productData.contentSections[lang] %}
+          {% set sectionItems = productData.contentSections[lang] %}
+        {% elif productData.contentSections and productData.contentSections.it %}
+          {% set sectionItems = productData.contentSections.it %}
+        {% endif %}
+
+        {% if sectionItems.length %}
+          {% for sec in sectionItems %}
+            <div class="mt-8 p-6 bg-white rounded-lg border border-gray-200">
+              {% if sec.title %}
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ sec.title }}</h3>
+              {% endif %}
+              {% if sec.paragraphs and sec.paragraphs.length %}
+                <div class="space-y-3 text-gray-700 leading-relaxed">
+                  {% for par in sec.paragraphs %}
+                    <p>{{ par }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if sec.items and sec.items.length %}
+                <ul class="mt-4 space-y-2">
+                  {% for item in sec.items %}
+                    <li class="flex items-start text-gray-700">
+                      <svg class="w-4 h-4 text-blue-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3"/></svg>
+                      <span>{{ item }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if sec.footer %}
+                <p class="mt-4 text-gray-700 leading-relaxed">{{ sec.footer }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
 
         {# More info section #}
         {% if productData.moreInfo %}

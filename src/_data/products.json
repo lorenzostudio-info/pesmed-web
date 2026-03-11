@@ -7,6 +7,10 @@
       "en": "ProSense: Cryotherapy",
       "it": "ProSense: Crioterapia"
     },
+    "subtitle": {
+      "en": "Cryoablation system",
+      "it": "Sistema per crioablazione"
+    },
     "manufacturer": "IceCure",
     "manufacturerUrl": "https://www.icecure-medical.com/",
     "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ProSense-without-shadow-1-234x300.png",
@@ -18,7 +22,7 @@
     ],
     "description": {
       "en": "The ProSense system is a device for cryo-ablation of tumour lesions, both benign and malignant. The cryostat technology is 3rd generation, operating with liquid nitrogen (-196°). The device can operate both percutaneously and intra-operatively using a single probe called a cryo-probe. The specific cryo-probes of the ProSense system are available in various calibres and lengths. ProSense cryoablation system - Code FAS3100000.",
-      "it": "Il sistema ProSense è un dispositivo per la crio-ablazione di lesioni tumorali, benigne e maligne. La tecnologia del criostato è di III generazione, operante ad azoto liquido (-196°). Il dispositivo può operare sia per via percutanea che per via intra-operatoria attraverso l'utilizzo di una singola sonda denominata crio-sonda. Le crio-sonde specifiche del sistema ProSense sono disponibili in diversi calibri e diverse lunghezze. Sistema per crioablazione ProSense™ - Codice FAS3100000."
+      "it": "Il sistema ProSense è un dispositivo per la crio-ablazione di lesioni tumorali, benigne e maligne. La tecnologia del criostato è di III generazione, operante ad azoto liquido (-196°). Il dispositivo può operare sia per via percutanea che per via intra-operatoria attraverso l'utilizzo di una singola sonda denominata crio-sonda. Le crio-sonde specifiche del sistema ProSense sono disponibili in diversi calibri e diverse lunghezze. Sistema per crioablazione ProSenseTM - Codice FAS3100000."
     },
     "moreInfo": {
       "en": "For more information, you can download the two brochures from the following links:",
@@ -48,32 +52,40 @@
       "en": "Micromate: Robotic Navigation",
       "it": "Micromate: Navigazione Robotica"
     },
-    "manufacturer": "Interventional Systems",
-    "manufacturerUrl": "https://www.interventional-systems.com/",
-    "image": "",
-    "images": [],
-    "description": {
-      "en": "Micromate is a robotic navigation system directly connected to the operating table. MicroMate is designed to facilitate the positioning and spatial orientation of needle guides for percutaneous procedures in interventional radiology. The system enables trajectory planning for single and/or multiple needle procedures, using pre- and intra-operative scans and a planning and navigation module compatible with CT, CBCT and Fluoroscopic equipment.",
-      "it": "Micromate è un sistema di navigazione robotica direttamente connesso al tavolo operatorio. MicroMate è progettato per facilitare il posizionamento e l'orientamento spaziale di guide ad ago per procedure percutanee in radiologia interventistica. Il sistema consente la pianificazione della traiettoria in procedure ad ago singolo e/o multipli, utilizzando scansioni pre e intra-operatorie e un modulo di pianificazione e navigazione compatibile con apparecchiature TC, CBCT e Fluoroscopiche."
+    "subtitle": {
+      "en": "Robotic Navigation Micromate",
+      "it": "Navigazione Robotica Micromate"
     },
-    "benefits": {
-      "en": [
-        "Rapid installation with minimal impact on the usual operational process in interventional radiology.",
-        "Improves operational efficiency (fast procedures, accurate alignments) compared to standard techniques.",
-        "Reduces intervention times by up to 57% in fluoroscopy-guided procedures.",
-        "Rapid learning curve for the operator and team; does not require the presence of clinical support specialists after training.",
-        "Seamless integration with planning or navigation systems without changes to the operational process or equipment.",
-        "Minimal footprint in the operating room; the device is easy to move depending on clinical needs.",
-        "Does not require sterilisation of components; single-patient devices supplied sterile."
-      ],
+    "manufacturer": "Interventional System",
+    "manufacturerUrl": "https://www.interventional-systems.com/",
+    "videoUrl": "https://www.youtube.com/watch?v=11a8crfWILQ",
+    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/micromate_planning.jpg",
+    "images": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/micromate_planning.jpg"
+    ],
+    "description": {
+      "en": "Micromate is a robotic navigation system directly connected to the operating table. MicroMate is designed to facilitate needle-guide positioning and spatial orientation in percutaneous interventional radiology procedures.",
+      "it": "Micromate è un sistema di navigazione robotica direttamente connesso al tavolo operatorio. MicroMate è progettato per facilitare il posizionamento e l’orientamento spaziale di guide ad ago per procedure percutanee in radiologia interventistica."
+    },
+    "contentSections": {
       "it": [
-        "Rapida installazione con minimo impatto sul consueto processo operativo in radiologia interventistica.",
-        "Migliora l'efficienza operativa (procedure rapide, allineamenti accurati) rispetto alle tecniche standard.",
-        "Riduce i tempi di intervento fino al 57% nelle procedure guidate da fluoroscopia.",
-        "Rapida curva di apprendimento da parte dell'operatore e del team; non richiede la presenza di specialisti di supporto clinico dopo la formazione.",
-        "Integrazione perfetta con i sistemi di pianificazione o navigazione senza modifiche al processo operativo o alle apparecchiature.",
-        "Ingombro minimo in sala operatoria; il dispositivo è di facile movimentazione dipendentemente dalle esigenze cliniche.",
-        "Non richiede la sterilizzazione dei componenti; dispositivo monopaziente forniti sterili."
+        {
+          "title": "Navigazione Robotica Micromate",
+          "paragraphs": [
+            "Micromate è un sistema di navigazione robotica direttamente connesso al tavolo operatorio. MicroMate è progettato per facilitare il posizionamento e l’orientamento spaziale di guide ad ago per procedure percutanee in radiologia interventistica.",
+            "Il sistema consente la pianificazione della traiettoria in procedure ad ago singolo e/o multipli, utilizzando scansioni pre e intra-operatorie e un modulo di pianificazione e navigazione compatibile con apparecchiature TC, CBCT e Fluoroscopiche."
+          ],
+          "items": [
+            "I principali benefici clinici della tecnologia sono:",
+            "Rapida installazione con minimo impatto sul consueto processo operativo in radiologia interventistica.",
+            "Migliora l’efficienza operativa (procedure rapide, allineamenti accurati) rispetto alle tecniche standard.",
+            "Riduce i tempi di intervento fino al 57% nelle procedure guidate da fluoroscopia.",
+            "Rapida curva di apprendimento da parte dell’operator e del team; non richiede la presenza di specialisti di supporto clinico dopo la formazione.",
+            "Integrazione perfetta con i sistemi di pianificazione o navigazione senza modifiche al processo operativo o alle apparecchiature.",
+            "Ingombro minimo in sala operatoria; il dispositivo è di facile movimentazione dipendentemente dalle esigenze cliniche.",
+            "Non richiede la sterilizzazione dei componenti; dispositivo monopaziente forniti sterili"
+          ]
+        }
       ]
     }
   },
@@ -85,13 +97,53 @@
       "en": "EndoVE: Endoscopic Reversible Electroporation",
       "it": "EndoVE: Elettroporazione Reversibile Endoscopica"
     },
+    "subtitle": {
+      "en": "Endoscopic Electrochemotherapy",
+      "it": "Elettrochemioterapia Endoscopica: ePORE therapy con EndoVE"
+    },
     "manufacturer": "Mirai Medical",
     "manufacturerUrl": "https://www.miraimedical.com/",
-    "image": "",
-    "images": [],
+    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/ePore-1.png",
+    "images": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/ePore-1.png",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/EndoVE-connected-to-scope.jpg"
+    ],
     "description": {
-      "en": "EndoVE is a system for endoscopic reversible electroporation (ePORE therapy). This innovative technology enables endoscopic electrochemotherapy procedures, combining reversible electroporation with targeted drug delivery for the treatment of tumours accessible via endoscopic routes.",
-      "it": "EndoVE è un sistema per l'elettroporazione reversibile endoscopica (ePORE therapy). Questa tecnologia innovativa consente procedure di elettrochemioterapia endoscopica, combinando l'elettroporazione reversibile con la somministrazione mirata di farmaci per il trattamento di tumori accessibili per via endoscopica."
+      "en": "EndoVE is an endoscopic reversible electroporation device used with ePORE technology for electrochemotherapy procedures.",
+      "it": "Il Sistema ePore è un innovativo dispositivo medico per l’applicazione dell’Elettrochemioterapia in conformità con le procedure standard ESOPE."
+    },
+    "contentSections": {
+      "it": [
+        {
+          "title": "ePORE: Elettroporazione Reversibile",
+          "paragraphs": [
+            "Il Sistema ePore è un innovativo dispositivo medico per l’applicazione dell’Elettrochemioterapia in conformità con le procedure standard ESOPE.",
+            "Mirai Medical ha sviluppato un elettroporatore innovativo denominato ePore che consente un approccio all’ECT a bassa energia e non dolorosa.",
+            "Il Sistema ePore è un innovativo dispositivo medico per l’applicazione dell’elettroporazione reversibile in conformità con le procedure standard ESOPE per l'elettrochemioterapia. ePORE eroga impulsi elettrici per l’elettroporazione ad una frequenza di 250kHz riducendo la contrazione muscolare e il conseguente dolore durante e post procedurale. Questa caratteristica unica di ePore – generazione di impulsi ad alta frequenza – consente l’applicazione dell'elettroporazione in regime di anestesia locale.",
+            "Il generatore ePORE è indicato per:"
+          ],
+          "items": [
+            "Trattamento locale di metastasi cutanee e sub-cutanee indipendenti dell'istologia o da precedenti trattamenti.",
+            "Trattamento per via endoscopica di tumori solidi.",
+            "Trattamento tramite elettroscleroterapia di malformazioni vascolari"
+          ]
+        },
+        {
+          "title": "EndoVE: Elettroporazione Reversibile Endoscopica",
+          "paragraphs": [
+            "Il dispositivo EndoVE si utilizza in connessione alla tecnologia ePORE. Il dispositivo EndoVE è dedicato alla elettroporazione reversibile per via endoscopica nei dotti ed appositamente progettato per l’introduzione per via gastrointestinale intraluminale attraverso l’uso di un endoscopio standard. Grazie alla tecnologia ePore, viene erogato direttamente al tessuto un campo elettrico. Il tessuto è trattato tramite aspirazione nella camera EndoVe (pressione a vuoto).",
+            "Le indicazioni cliniche sono:"
+          ],
+          "items": [
+            "Tumori dell’esofago non operabili.",
+            "Tumori del tratto colo-retto/anale in stadio avanzato, non operabili",
+            "Tumori gastrici non operabili o aggredibili con le terapie standard",
+            "Lesioni sanguinanti che costringono a frequenti trasfusioni.",
+            "Trattamento di malformazioni vascolari del tratto rinofaringeo."
+          ],
+          "footer": "Applicabile anche negli stadi iniziali come approccio neo-adiuvante per debulking, in regime di sedazione o anestesia generale."
+        }
+      ]
     }
   },
   {
@@ -102,13 +154,48 @@
       "en": "CUTIS: Cutaneous Reversible Electroporation",
       "it": "CUTIS: Elettroporazione Reversibile Cutanea"
     },
+    "subtitle": {
+      "en": "Cutaneous Electrochemotherapy",
+      "it": "Elettrochemioterapia Cutanea: ePORE therapy con CUTIS"
+    },
     "manufacturer": "Mirai Medical",
     "manufacturerUrl": "https://www.miraimedical.com/",
-    "image": "",
-    "images": [],
+    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/Cutis.png",
+    "images": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/Cutis.png",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/ePore-1.png"
+    ],
     "description": {
-      "en": "CUTIS is a system for cutaneous reversible electroporation (ePORE therapy). This technology enables cutaneous electrochemotherapy procedures, combining reversible electroporation with targeted drug delivery for the treatment of superficial and cutaneous tumour lesions.",
-      "it": "CUTIS è un sistema per l'elettroporazione reversibile cutanea (ePORE therapy). Questa tecnologia consente procedure di elettrochemioterapia cutanea, combinando l'elettroporazione reversibile con la somministrazione mirata di farmaci per il trattamento di lesioni tumorali superficiali e cutanee."
+      "en": "CUTIS is a dedicated cutaneous electrochemotherapy electrode used in connection with ePORE technology.",
+      "it": "Il Sistema ePore è un innovativo dispositivo medico per l’applicazione dell’elettroporazione reversibile in conformità con le procedure standard ESOPE per l'elettrochemioterapia."
+    },
+    "contentSections": {
+      "it": [
+        {
+          "title": "ePORE: Elettroporazione Reversibile",
+          "paragraphs": [
+            "Il Sistema ePore è un innovativo dispositivo medico per l’applicazione dell’elettroporazione reversibile in conformità con le procedure standard ESOPE per l'elettrochemioterapia. ePORE eroga impulsi elettrici per l’elettroporazione ad una frequenza di 250kHz riducendo la contrazione muscolare e il conseguente dolore durante e post procedurale. Questa caratteristica unica di ePore – generazione di impulsi ad alta frequenza – consente l’applicazione dell'elettroporazione in regime di anestesia locale.",
+            "Il generatore ePORE è indicato per:"
+          ],
+          "items": [
+            "Trattamento locale di metastasi cutanee e sub-cutanee indipendenti dell'istologia o da precedenti trattamenti.",
+            "Trattamento per via endoscopica di tumori solidi.",
+            "Trattamento tramite elettroscleroterapia di malformazioni vascolari"
+          ]
+        },
+        {
+          "title": "CUTIS: Elettrochemioterapia Cutanea",
+          "paragraphs": [
+            "Il dispositivo CUTIS è un elettrodo specifico – in connessione ad ePORE – per l'applicazione dedicato alla elettrochemioterapia cutanea costituito da aghi la cui lunghezza è regolabile. La tecnologia CUTIS consente di mantenere allineati gli aghi durante l'erogazione degli impulsi consentendo trattamenti multipli sul medesimo target anatomico.",
+            "CUTIS consente di trattare lesioni fino a 2,0 cm di profondità (range da 0,5 cm a 2,0 cm).",
+            "Le indicazioni cliniche sono:"
+          ],
+          "items": [
+            "Trattamento locale di metastasi cutanee e sottocutanee.",
+            "Trattamento di malformazioni vascolari tramite elettrocleroterapia"
+          ]
+        }
+      ]
     }
   },
   {
@@ -119,10 +206,29 @@
       "en": "iFIX: Patient Positioning",
       "it": "iFIX: Posizionamento Paziente"
     },
+    "subtitle": {
+      "en": "Patient Positioning iFIX",
+      "it": "Posizionamento Paziente iFIX"
+    },
     "manufacturer": "Interventional Systems",
     "manufacturerUrl": "https://www.interventional-systems.com/",
-    "image": "",
-    "images": [],
+    "videoUrl": "https://youtu.be/yqugvhAsfSI",
+    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/ifix_fleece.jpg",
+    "images": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_160732_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161055_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161130_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161147_Drive-e1757686645710.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162710_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162730_Drive-e1757687294248.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161251_Drive-e1757686693109.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161936_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162006_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162025_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162046_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162112_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162140_Drive.jpg"
+    ],
     "description": {
       "en": "iFIX is a precision patient positioning system designed for interventional radiology and surgical procedures. The system provides stable and reproducible patient positioning, ensuring optimal access and accuracy during minimally invasive procedures.",
       "it": "iFIX è un sistema di posizionamento paziente di precisione progettato per procedure di radiologia interventistica e chirurgiche. Il sistema fornisce un posizionamento paziente stabile e riproducibile, garantendo accesso ottimale e precisione durante le procedure mini-invasive."
@@ -136,13 +242,50 @@
       "en": "PearlFit",
       "it": "PearlFit"
     },
+    "subtitle": {
+      "en": "PearlFit",
+      "it": "PearlFit"
+    },
     "manufacturer": "PearlTechnology",
     "manufacturerUrl": "",
-    "image": "",
-    "images": [],
+    "image": "https://labtechco-demo.pbminfotech.com/elementor-datasite1/wp-content/uploads/sites/34/2022/11/img-03.jpg",
+    "images": [
+      "https://labtechco-demo.pbminfotech.com/elementor-datasite1/wp-content/uploads/sites/34/2022/11/img-03.jpg",
+      "https://labtechco-demo.pbminfotech.com/elementor-datasite1/wp-content/uploads/sites/34/2022/11/img-02.jpg"
+    ],
     "description": {
-      "en": "PearlFit is an advanced medical device by PearlTechnology. The system offers a comprehensive range of biomarker analysis solutions including bone metabolism markers, hormonal assays and specialised immunoassays for research and clinical applications.",
-      "it": "PearlFit è un dispositivo medico avanzato di PearlTechnology. Il sistema offre una gamma completa di soluzioni per l'analisi dei biomarcatori, inclusi marcatori del metabolismo osseo, dosaggi ormonali e immunodosaggi specializzati per applicazioni di ricerca e cliniche."
+      "en": "When it comes to financial matters, customer engagement matters more than ever.",
+      "it": "When it comes to financial matters, customer engagement matters more than ever."
+    },
+    "contentSections": {
+      "it": [
+        {
+          "title": "PearlFit",
+          "paragraphs": [
+            "Must explain to you how all this mistaken idea of denouncing works pleasure and praising uts pain was born and I will gives you a itself completed account of the system, and sed expounds the ut actual teachings of that greater sed explores truth.",
+            "Denouncing works pleasures and praising pains was us born and I will gives you a completed ut workers accounts of the system."
+          ],
+          "items": [
+            "Rat/Mouse PINP EIA",
+            "IDS-iSYS PTH (1-34)",
+            "Corticosterone EIA",
+            "Corticosterone HS",
+            "Urine CartiLaps EIA"
+          ]
+        },
+        {
+          "title": "OUR RESEARCH",
+          "paragraphs": [
+            "Must explain to you how all this mistaken idea of denouncing works pleasure and praising uts pain was born and I will gives you a itself completed account of the system, and sed expounds the ut actual teachings of that greater sed explores truth.",
+            "Denouncing works pleasures and praising pains was us born and I will gives you a completed ut workers accounts of the system."
+          ],
+          "items": [
+            "BIBLIOGRAPHIC AND IP RESEARCH",
+            "ROUTE SCOUTING DESIGN OF NEW ROUTES",
+            "CHEMICAL DEVELOPMENT"
+          ]
+        }
+      ]
     }
   },
   {
@@ -153,10 +296,17 @@
       "en": "PIUR Infinity: 3D Ultrasound Tomography",
       "it": "PIUR Infinity: Tomografia Ecografica 3D"
     },
+    "subtitle": {
+      "en": "PIUR Infinity",
+      "it": "PIUR Infinity: Tomografia Ecografica 3D"
+    },
     "manufacturer": "Piur Imaging",
     "manufacturerUrl": "https://www.piurimaging.com/",
-    "image": "",
-    "images": [],
+    "videoUrl": "https://youtu.be/LjbNbLnh0gE",
+    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/07/piur_imaging.png",
+    "images": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/07/piur_imaging.png"
+    ],
     "description": {
       "en": "The PIUR tUS Infinity tomographic ultrasound system transforms any standard ultrasound into a 3D tomographic imaging device, bridging the gap between 2D ultrasound and standard 3D tomographic imaging solutions. In just a few seconds, entire tissue or organ sections are acquired in a single volumetric data set, enabling retrospective evaluation of acquired data. Integrated artificial intelligence analysis tools perform automatic detections and quantifications, multi-planar reconstructions and 3D visualizations, reducing clinical examination times and facilitating interpretation of even the most complex vascular anatomy.",
       "it": "Il sistema a ultrasuoni tomografico PIUR tUS Infinity permette di trasformare qualsiasi ecografo standard in un dispositivo di imaging tomografico in 3D, cercando di colmare il divario tra la bidimensionalità degli ultrasuoni 2D e le normali soluzioni di imaging 3D tomografico. In pochi secondi, intere sezioni di tessuto o organo vengono acquisite in un unico set di dati volumetrico consentendo una valutazione retrospettiva dei dati acquisiti. Gli strumenti di analisi ad intelligenza artificiale integrati eseguono rilevamenti e quantificazioni automatiche, ricostruzioni multi-planari e visualizzazioni 3D, consentendo di ridurre i tempi dell'esame clinico e facilitando l'interpretazione anche dell'anatomia vascolare più complessa."
@@ -170,7 +320,7 @@
       "it": [
         "Tracking tiroideo",
         "Mappatura Vascolare: fistole, aneurisma, vene",
-        "Analisi delle placche carotidee"
+        "Analisi della placche carotidee"
       ]
     },
     "clinicalBenefits": {
