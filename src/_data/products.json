@@ -214,6 +214,15 @@
     "manufacturerUrl": "https://www.interventional-systems.com/",
     "videoUrl": "https://youtu.be/yqugvhAsfSI",
     "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/ifix_fleece.jpg",
+    "scrollableImages": [
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_160732_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161130_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162710_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161936_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162006_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162025_Drive.jpg",
+      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162046_Drive.jpg"
+    ],
     "images": [
       "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_160732_Drive.jpg",
       "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161055_Drive.jpg",

@@ -1,9 +1,9 @@
 {# Products section - used on homepage AND products index page #}
-<section class="py-12 md:py-16 bg-gray-50">
+<section class="py-16 md:py-24 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{{ translations[lang].productsTitle }}</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto text-base md:text-lg">{{ translations[lang].productsIntro }}</p>
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ translations[lang].productsTitle }}</h2>
+      <p class="text-gray-600 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed">{{ translations[lang].productsIntro }}</p>
     </div>
 
     {% set categoryIcons = {
@@ -20,35 +20,46 @@
 
     {% set categories = products | getCategories %}
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+    {# Short display names for the product cards #}
+    {% set shortNames = {
+      "cryotherapy-prosense": { "en": "ProSense", "it": "ProSense" },
+      "robotic-navigation-micromate": { "en": "Micromate", "it": "Micromate" },
+      "endoscopic-electroporation-endove": { "en": "EndoVE", "it": "EndoVE" },
+      "cutaneous-electroporation-cutis": { "en": "CUTIS", "it": "CUTIS" },
+      "patient-positioning-ifix": { "en": "iFIX", "it": "iFIX" },
+      "biomarker-analysis-pearlfit": { "en": "PearlFit", "it": "PearlFit" },
+      "3d-ultrasound-tomography-piur": { "en": "PIUR Infinity", "it": "PIUR Infinity" }
+    } %}
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
       {% for cat in categories %}
         {% set catProducts = products | filterByCategory(cat) %}
         {% set colors = categoryColors[cat] %}
         {% set icon = categoryIcons[cat] %}
         {% set catName = translations[lang].categories[cat] %}
 
-        <div class="rounded-xl border {{ colors.border }} {{ colors.bg }} p-5">
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center min-w-0">
-              <div class="{{ colors.iconBg }} rounded-lg p-2.5 mr-3">
-                <svg class="w-5 h-5 {{ colors.accent }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">{{ icon | safe }}</svg>
-              </div>
-              <h3 class="text-base font-bold text-gray-900 leading-tight">{{ catName }}</h3>
+        <div class="rounded-2xl border-2 {{ colors.border }} {{ colors.bg }} p-7">
+          <div class="flex items-center mb-7">
+            <div class="{{ colors.iconBg }} rounded-xl p-3 mr-4 shrink-0">
+              <svg class="w-7 h-7 {{ colors.accent }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">{{ icon | safe }}</svg>
             </div>
-            <span class="text-xs font-semibold px-2 py-1 rounded-full {{ colors.chip }}">{{ catProducts | length }}</span>
+            <h3 class="text-xl font-bold text-gray-900 leading-tight">{{ catName }}</h3>
           </div>
 
-          <div class="space-y-2.5">
+          <div class="space-y-4">
             {% for product in catProducts %}
-              <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}" class="group block bg-white/90 border border-white rounded-lg px-3 py-2.5 hover:border-gray-200 hover:shadow-sm transition-all duration-200">
-                <div class="flex items-center justify-between gap-3">
+              {% set displayName = shortNames[product.slug][lang] if shortNames[product.slug] else (product.name[lang] | default(product.name.it)) %}
+              <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}" class="group block bg-white/90 border border-white rounded-xl px-5 py-4 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+                <div class="flex items-center justify-between gap-4">
                   <div class="min-w-0">
-                    <p class="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">{{ product.name[lang] | default(product.name.it) }}</p>
-                    <p class="text-xs text-gray-500 truncate">{{ product.manufacturer }}</p>
+                    <p class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">{{ displayName }}</p>
+                    <p class="text-sm text-gray-500 truncate mt-1">{{ product.manufacturer }}</p>
                   </div>
-                  <div class="shrink-0 text-right">
-                    <p class="text-[11px] font-mono text-gray-400">#{{ product.number }}</p>
-                    <span class="text-blue-600 text-[11px] font-semibold">{{ translations[lang].viewProduct }}</span>
+                  <div class="shrink-0">
+                    <span class="inline-flex items-center text-blue-600 text-sm font-semibold group-hover:translate-x-1 transition-transform duration-200">
+                      {{ translations[lang].viewProduct }}
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </span>
                   </div>
                 </div>
               </a>
