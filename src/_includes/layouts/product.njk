@@ -58,6 +58,51 @@ layout: layouts/base.njk
           </div>
         {% endif %}
 
+        {# Key benefits list #}
+        {% if productData.benefits %}
+          <div class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].keyBenefits }}</h3>
+            <ul class="space-y-3">
+              {% for benefit in productData.benefits[lang] if productData.benefits[lang] %}
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-gray-700">{{ benefit }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {# Clinical targets #}
+        {% if productData.clinicalTargets %}
+          <div class="mt-8 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].clinicalTargets }}</h3>
+            <ul class="space-y-2">
+              {% for target in productData.clinicalTargets[lang] if productData.clinicalTargets[lang] %}
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3"/></svg>
+                  <span class="text-gray-700">{{ target }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {# Clinical benefits #}
+        {% if productData.clinicalBenefits %}
+          <div class="mt-8 p-6 bg-sky-50 rounded-lg border border-sky-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].clinicalBenefits }}</h3>
+            <ul class="space-y-3">
+              {% for benefit in productData.clinicalBenefits[lang] if productData.clinicalBenefits[lang] %}
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-sky-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span class="text-gray-700">{{ benefit }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
         {# YouTube channel #}
         {% if productData.youtubeChannel %}
           <div class="mt-6">
