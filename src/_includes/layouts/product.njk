@@ -70,28 +70,28 @@ layout: layouts/base.njk
               {# Carousel with prev/next buttons (for iFIX and similar) #}
               <div x-data="{ slide: 0, carouselTotal: {{ galleryImages.length }} }" class="relative">
                 {# Main large image display #}
-                <div class="relative bg-gray-50 rounded-xl shadow-md overflow-hidden" style="min-height: 400px;">
+                <div class="relative bg-gray-50 rounded-xl shadow-md overflow-hidden min-h-[260px] sm:min-h-[340px] md:min-h-[400px]">
                   {% for img in galleryImages %}
-                    <div x-show="slide === {{ loop.index0 }}" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="flex items-center justify-center p-4 cursor-zoom-in" @click="show({{ loop.index0 }})" data-gallery-thumb>
+                    <div x-show="slide === {{ loop.index0 }}" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute inset-0 flex items-center justify-center p-3 sm:p-4 cursor-zoom-in" @click="show({{ loop.index0 }})" data-gallery-thumb>
                       <img src="{{ img }}"
                         alt="{{ productData.name[lang] if productData.name[lang] else title }} {{ loop.index }}"
-                        class="max-h-[500px] w-auto max-w-full object-contain rounded-lg">
+                        class="max-h-[220px] sm:max-h-[300px] md:max-h-[500px] w-auto max-w-full object-contain rounded-lg">
                     </div>
                   {% endfor %}
                 </div>
 
                 {# Prev / Next buttons #}
                 <button type="button" @click="slide = (slide - 1 + carouselTotal) % carouselTotal"
-                  class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 shadow-lg rounded-full p-3 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 shadow-lg rounded-full p-2 sm:p-3 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   aria-label="Previous">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                   </svg>
                 </button>
                 <button type="button" @click="slide = (slide + 1) % carouselTotal"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 shadow-lg rounded-full p-3 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 shadow-lg rounded-full p-2 sm:p-3 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   aria-label="Next">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
                 </button>
