@@ -13,12 +13,12 @@
     },
     "manufacturer": "IceCure",
     "manufacturerUrl": "https://www.icecure-medical.com/",
-    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ProSense-without-shadow-1-234x300.png",
+    "image": "/assets/images/products/cryotherapy-prosense-01.png",
     "images": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ice13916_amended_V001-200x300.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/ProSense-without-shadow-1-234x300.png",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/IceBall-in-Gel-300x200.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/01/criosonda-sterile-monouso-icecure.png"
+      "/assets/images/products/cryotherapy-prosense-02.jpg",
+      "/assets/images/products/cryotherapy-prosense-01.png",
+      "/assets/images/products/cryotherapy-prosense-03.jpg",
+      "/assets/images/products/cryotherapy-prosense-04.png"
     ],
     "description": {
       "en": "The ProSense system is a device for cryo-ablation of tumour lesions, both benign and malignant. The cryostat technology is 3rd generation, operating with liquid nitrogen (-196°). The device can operate both percutaneously and intra-operatively using a single probe called a cryo-probe. The specific cryo-probes of the ProSense system are available in various calibres and lengths. ProSense cryoablation system - Code FAS3100000.",
@@ -59,9 +59,9 @@
     "manufacturer": "Interventional System",
     "manufacturerUrl": "https://www.interventional-systems.com/",
     "videoUrl": "https://www.youtube.com/watch?v=11a8crfWILQ",
-    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/micromate_planning.jpg",
+    "image": "/assets/images/products/robotic-navigation-micromate-01.jpg",
     "images": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/micromate_planning.jpg"
+      "/assets/images/products/robotic-navigation-micromate-01.jpg"
     ],
     "description": {
       "en": "Micromate is a robotic navigation system directly connected to the operating table. MicroMate is designed to facilitate needle-guide positioning and spatial orientation in percutaneous interventional radiology procedures.",
@@ -103,10 +103,10 @@
     },
     "manufacturer": "Mirai Medical",
     "manufacturerUrl": "https://www.miraimedical.com/",
-    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/ePore-1.png",
+    "image": "/assets/images/products/endoscopic-electroporation-endove-01.png",
     "images": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/ePore-1.png",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/EndoVE-connected-to-scope.jpg"
+      "/assets/images/products/endoscopic-electroporation-endove-01.png",
+      "/assets/images/products/endoscopic-electroporation-endove-02.jpg"
     ],
     "description": {
       "en": "EndoVE is an endoscopic reversible electroporation device used with ePORE technology for electrochemotherapy procedures.",
@@ -160,10 +160,10 @@
     },
     "manufacturer": "Mirai Medical",
     "manufacturerUrl": "https://www.miraimedical.com/",
-    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/Cutis.png",
+    "image": "/assets/images/products/cutaneous-electroporation-cutis-01.png",
     "images": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/Cutis.png",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/08/ePore-1.png"
+      "/assets/images/products/cutaneous-electroporation-cutis-01.png",
+      "/assets/images/products/cutaneous-electroporation-cutis-02.png"
     ],
     "description": {
       "en": "CUTIS is a dedicated cutaneous electrochemotherapy electrode used in connection with ePORE technology.",
@@ -213,30 +213,36 @@
     "manufacturer": "Interventional Systems",
     "manufacturerUrl": "https://www.interventional-systems.com/",
     "videoUrl": "https://youtu.be/yqugvhAsfSI",
-    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/ifix_fleece.jpg",
+    "image": "/assets/images/products/patient-positioning-ifix-01.jpg",
     "scrollableImages": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_160732_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161130_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162710_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161936_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162006_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162025_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162046_Drive.jpg"
+      "/assets/images/products/patient-positioning-ifix-02.jpg",
+      "/assets/images/products/patient-positioning-ifix-03.jpg",
+      "/assets/images/products/patient-positioning-ifix-04.jpg",
+      "/assets/images/products/patient-positioning-ifix-05.jpg",
+      "/assets/images/products/patient-positioning-ifix-06.jpg",
+      "/assets/images/products/patient-positioning-ifix-07.jpg",
+      "/assets/images/products/patient-positioning-ifix-08.jpg",
+      "/assets/images/products/patient-positioning-ifix-09.jpg",
+      "/assets/images/products/patient-positioning-ifix-10.jpg",
+      "/assets/images/products/patient-positioning-ifix-11.jpg",
+      "/assets/images/products/patient-positioning-ifix-12.jpg",
+      "/assets/images/products/patient-positioning-ifix-13.jpg",
+      "/assets/images/products/patient-positioning-ifix-14.jpg"
     ],
     "images": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_160732_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161055_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161130_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161147_Drive-e1757686645710.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162710_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162730_Drive-e1757687294248.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161251_Drive-e1757686693109.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_161936_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162006_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162025_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162046_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162112_Drive.jpg",
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2018/06/SmartSelect_20250912_162140_Drive.jpg"
+      "/assets/images/products/patient-positioning-ifix-02.jpg",
+      "/assets/images/products/patient-positioning-ifix-03.jpg",
+      "/assets/images/products/patient-positioning-ifix-04.jpg",
+      "/assets/images/products/patient-positioning-ifix-05.jpg",
+      "/assets/images/products/patient-positioning-ifix-06.jpg",
+      "/assets/images/products/patient-positioning-ifix-07.jpg",
+      "/assets/images/products/patient-positioning-ifix-08.jpg",
+      "/assets/images/products/patient-positioning-ifix-09.jpg",
+      "/assets/images/products/patient-positioning-ifix-10.jpg",
+      "/assets/images/products/patient-positioning-ifix-11.jpg",
+      "/assets/images/products/patient-positioning-ifix-12.jpg",
+      "/assets/images/products/patient-positioning-ifix-13.jpg",
+      "/assets/images/products/patient-positioning-ifix-14.jpg"
     ],
     "description": {
       "en": "iFIX is a precision patient positioning system designed for interventional radiology and surgical procedures. The system provides stable and reproducible patient positioning, ensuring optimal access and accuracy during minimally invasive procedures.",
@@ -257,10 +263,10 @@
     },
     "manufacturer": "PearlTechnology",
     "manufacturerUrl": "",
-    "image": "https://labtechco-demo.pbminfotech.com/elementor-datasite1/wp-content/uploads/sites/34/2022/11/img-03.jpg",
+    "image": "/assets/images/products/biomarker-analysis-pearlfit-01.jpg",
     "images": [
-      "https://labtechco-demo.pbminfotech.com/elementor-datasite1/wp-content/uploads/sites/34/2022/11/img-03.jpg",
-      "https://labtechco-demo.pbminfotech.com/elementor-datasite1/wp-content/uploads/sites/34/2022/11/img-02.jpg"
+      "/assets/images/products/biomarker-analysis-pearlfit-01.jpg",
+      "/assets/images/products/biomarker-analysis-pearlfit-02.jpg"
     ],
     "description": {
       "en": "When it comes to financial matters, customer engagement matters more than ever.",
@@ -312,9 +318,9 @@
     "manufacturer": "Piur Imaging",
     "manufacturerUrl": "https://www.piurimaging.com/",
     "videoUrl": "https://youtu.be/LjbNbLnh0gE",
-    "image": "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/07/piur_imaging.png",
+    "image": "/assets/images/products/3d-ultrasound-tomography-piur-01.png",
     "images": [
-      "https://pesmed.lorenzostudio.info/wp-content/uploads/2024/07/piur_imaging.png"
+      "/assets/images/products/3d-ultrasound-tomography-piur-01.png"
     ],
     "description": {
       "en": "The PIUR tUS Infinity tomographic ultrasound system transforms any standard ultrasound into a 3D tomographic imaging device, bridging the gap between 2D ultrasound and standard 3D tomographic imaging solutions. In just a few seconds, entire tissue or organ sections are acquired in a single volumetric data set, enabling retrospective evaluation of acquired data. Integrated artificial intelligence analysis tools perform automatic detections and quantifications, multi-planar reconstructions and 3D visualizations, reducing clinical examination times and facilitating interpretation of even the most complex vascular anatomy.",
