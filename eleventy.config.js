@@ -70,6 +70,19 @@ export default async function(eleventyConfig) {
 		return arr.find(item => item.slug === slug) || {};
 	});
 
+	// Nunjucks filter: filter products by category
+	eleventyConfig.addFilter("filterByCategory", (arr, category) => {
+		if (!Array.isArray(arr) || !category) return [];
+		return arr.filter(item => item.category === category);
+	});
+
+	// Nunjucks filter: get unique categories from products
+	eleventyConfig.addFilter("getCategories", (arr) => {
+		if (!Array.isArray(arr)) return [];
+		const cats = [...new Set(arr.map(item => item.category).filter(Boolean))];
+		return cats;
+	});
+
 	// Passtrough
 	eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 

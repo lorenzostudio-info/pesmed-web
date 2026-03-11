@@ -32,7 +32,17 @@
     "backToProducts": "Back to Products",
     "backToNews": "Back to News",
     "rssFeed": "RSS Feed",
-    "youtubeChannel": "YouTube Channel"
+    "youtubeChannel": "YouTube Channel",
+    "watchVideo": "Watch Video",
+    "viewProduct": "View Product",
+    "clinicalBenefits": "Clinical Benefits",
+    "clinicalTargets": "Clinical Targets & Indications",
+    "keyBenefits": "Key Benefits",
+    "categories": {
+      "cryotherapy-ablation": "Cryotherapy & Ablation",
+      "electroporation-therapy": "Electroporation Therapy",
+      "surgical-navigation-imaging": "Surgical Navigation & Imaging"
+    }
   },
   "it": {
     "siteTitle": "PesMed",
@@ -67,6 +77,16 @@
     "backToProducts": "Torna ai Prodotti",
     "backToNews": "Torna alle News",
     "rssFeed": "Feed RSS",
-    "youtubeChannel": "Canale YouTube"
+    "youtubeChannel": "Canale YouTube",
+    "watchVideo": "Guarda Video",
+    "viewProduct": "Vedi Prodotto",
+    "clinicalBenefits": "Benefici Clinici",
+    "clinicalTargets": "Principali Target Clinici ed Indicazioni",
+    "keyBenefits": "Benefici Principali",
+    "categories": {
+      "cryotherapy-ablation": "Crioterapia & Ablazione",
+      "electroporation-therapy": "Terapia di Elettroporazione",
+      "surgical-navigation-imaging": "Navigazione Chirurgica & Imaging"
+    }
   }
 }
