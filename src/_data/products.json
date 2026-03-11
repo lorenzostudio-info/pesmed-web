@@ -1,15 +1,16 @@
 [
   {
     "slug": "cryotherapy-prosense",
+    "eleventyPaginationGroupNumber": "cryotherapy-prosense",
     "number": "01",
     "category": "cryotherapy-ablation",
     "name": {
-      "en": "ProSense: Cryotherapy",
-      "it": "ProSense: Crioterapia"
+      "en": "ProSense",
+      "it": "ProSense"
     },
     "subtitle": {
-      "en": "Cryoablation system",
-      "it": "Sistema per crioablazione"
+      "en": "Cryotherapy system",
+      "it": "Sistema per Crioterapia"
     },
     "manufacturer": "IceCure",
     "manufacturerUrl": "https://www.icecure-medical.com/",
@@ -46,15 +47,16 @@
   },
   {
     "slug": "robotic-navigation-micromate",
+    "eleventyPaginationGroupNumber": "robotic-navigation-micromate",
     "number": "02",
     "category": "surgical-navigation-imaging",
     "name": {
-      "en": "Micromate: Robotic Navigation",
-      "it": "Micromate: Navigazione Robotica"
+      "en": "Micromate",
+      "it": "Micromate"
     },
     "subtitle": {
-      "en": "Robotic Navigation Micromate",
-      "it": "Navigazione Robotica Micromate"
+      "en": "Robotic Navigation",
+      "it": "Navigazione Robotica"
     },
     "manufacturer": "Interventional System",
     "manufacturerUrl": "https://www.interventional-systems.com/",
@@ -91,15 +93,16 @@
   },
   {
     "slug": "endoscopic-electroporation-endove",
+    "eleventyPaginationGroupNumber": "endoscopic-electroporation-endove",
     "number": "03",
     "category": "electroporation-therapy",
     "name": {
-      "en": "EndoVE: Endoscopic Reversible Electroporation",
-      "it": "EndoVE: Elettroporazione Reversibile Endoscopica"
+      "en": "EndoVE",
+      "it": "EndoVE"
     },
     "subtitle": {
-      "en": "Endoscopic Electrochemotherapy",
-      "it": "Elettrochemioterapia Endoscopica: ePORE therapy con EndoVE"
+      "en": "Endoscopic Reversible Electroporation",
+      "it": "Elettroporazione Reversibile Endoscopica"
     },
     "manufacturer": "Mirai Medical",
     "manufacturerUrl": "https://www.miraimedical.com/",
@@ -148,15 +151,16 @@
   },
   {
     "slug": "cutaneous-electroporation-cutis",
+    "eleventyPaginationGroupNumber": "cutaneous-electroporation-cutis",
     "number": "04",
     "category": "electroporation-therapy",
     "name": {
-      "en": "CUTIS: Cutaneous Reversible Electroporation",
-      "it": "CUTIS: Elettroporazione Reversibile Cutanea"
+      "en": "CUTIS",
+      "it": "CUTIS"
     },
     "subtitle": {
-      "en": "Cutaneous Electrochemotherapy",
-      "it": "Elettrochemioterapia Cutanea: ePORE therapy con CUTIS"
+      "en": "Cutaneous Reversible Electroporation",
+      "it": "Elettroporazione Reversibile Cutanea"
     },
     "manufacturer": "Mirai Medical",
     "manufacturerUrl": "https://www.miraimedical.com/",
@@ -200,15 +204,16 @@
   },
   {
     "slug": "patient-positioning-ifix",
+    "eleventyPaginationGroupNumber": "patient-positioning-ifix",
     "number": "05",
     "category": "surgical-navigation-imaging",
     "name": {
-      "en": "iFIX: Patient Positioning",
-      "it": "iFIX: Posizionamento Paziente"
+      "en": "iFIX",
+      "it": "iFIX"
     },
     "subtitle": {
-      "en": "Patient Positioning iFIX",
-      "it": "Posizionamento Paziente iFIX"
+      "en": "Patient Positioning",
+      "it": "Posizionamento Paziente"
     },
     "manufacturer": "Interventional Systems",
     "manufacturerUrl": "https://www.interventional-systems.com/",
@@ -251,6 +256,7 @@
   },
   {
     "slug": "biomarker-analysis-pearlfit",
+    "eleventyPaginationGroupNumber": "biomarker-analysis-pearlfit",
     "number": "06",
     "category": "cryotherapy-ablation",
     "name": {
@@ -305,15 +311,16 @@
   },
   {
     "slug": "3d-ultrasound-tomography-piur",
+    "eleventyPaginationGroupNumber": "3d-ultrasound-tomography-piur",
     "number": "07",
     "category": "surgical-navigation-imaging",
     "name": {
-      "en": "PIUR Infinity: 3D Ultrasound Tomography",
-      "it": "PIUR Infinity: Tomografia Ecografica 3D"
+      "en": "PIUR Infinity",
+      "it": "PIUR Infinity"
     },
     "subtitle": {
-      "en": "PIUR Infinity",
-      "it": "PIUR Infinity: Tomografia Ecografica 3D"
+      "en": "3D Ultrasound Tomography",
+      "it": "Tomografia Ecografica 3D"
     },
     "manufacturer": "Piur Imaging",
     "manufacturerUrl": "https://www.piurimaging.com/",

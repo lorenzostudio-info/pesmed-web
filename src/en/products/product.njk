@@ -1,0 +1,13 @@
+---
+pagination:
+  data: products
+  size: 1
+  alias: product
+layout: layouts/product.njk
+lang: en
+eleventyComputed:
+  title: "{{ product.name[lang] if product.name[lang] else product.name.it }}"
+  description: "{{ product.description[lang] if product.description[lang] else product.description.it }}"
+  permalink: "/{{ lang }}/products/{{ product.slug }}/"
+  productSlug: "{{ product.slug }}"
+---
