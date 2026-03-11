@@ -42,13 +42,24 @@ layout: layouts/base.njk
           {# Alpine.js gallery component #}
           <div
             x-data="{
-              images: [{% for img in galleryImages %}'{{ img }}'{% if not loop.last %},{% endif %}{% endfor %}],
+              thumbs: [],
               open: false,
               current: 0,
+              total: 0,
               lightboxSrc: '',
-              show(idx) { this.current = idx; this.lightboxSrc = this.images[idx]; this.open = true; },
-              prev() { this.current = (this.current - 1 + this.images.length) % this.images.length; this.lightboxSrc = this.images[this.current]; },
-              next() { this.current = (this.current + 1) % this.images.length; this.lightboxSrc = this.images[this.current]; },
+              init() {
+                this.thumbs = Array.from(this.$root.querySelectorAll('[data-gallery-thumb]'));
+                this.total = this.thumbs.length;
+              },
+              getSrc(idx) {
+                const el = this.thumbs[idx];
+                if (!el) return '';
+                const img = el.querySelector('img');
+                return img ? img.src : '';
+              },
+              show(idx) { this.current = idx; this.lightboxSrc = this.getSrc(idx); this.open = true; },
+              prev() { this.current = (this.current - 1 + this.total) % this.total; this.lightboxSrc = this.getSrc(this.current); },
+              next() { this.current = (this.current + 1) % this.total; this.lightboxSrc = this.getSrc(this.current); },
               close() { this.open = false; }
             }"
             @keydown.escape.window="if(open) close()"
@@ -57,11 +68,11 @@ layout: layouts/base.njk
           >
             {% if useCarousel %}
               {# Carousel with prev/next buttons (for iFIX and similar) #}
-              <div x-data="{ slide: 0, total: {{ galleryImages.length }} }" class="relative">
+              <div x-data="{ slide: 0, carouselTotal: {{ galleryImages.length }} }" class="relative">
                 {# Main large image display #}
                 <div class="relative bg-gray-50 rounded-xl shadow-md overflow-hidden" style="min-height: 400px;">
                   {% for img in galleryImages %}
-                    <div x-show="slide === {{ loop.index0 }}" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="flex items-center justify-center p-4 cursor-zoom-in" @click="show({{ loop.index0 }})">
+                    <div x-show="slide === {{ loop.index0 }}" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="flex items-center justify-center p-4 cursor-zoom-in" @click="show({{ loop.index0 }})" data-gallery-thumb>
                       <img src="{{ img }}"
                         alt="{{ productData.name[lang] if productData.name[lang] else title }} {{ loop.index }}"
                         class="max-h-[500px] w-auto max-w-full object-contain rounded-lg">
@@ -70,14 +81,14 @@ layout: layouts/base.njk
                 </div>
 
                 {# Prev / Next buttons #}
-                <button type="button" @click="slide = (slide - 1 + total) % total"
+                <button type="button" @click="slide = (slide - 1 + carouselTotal) % carouselTotal"
                   class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 shadow-lg rounded-full p-3 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   aria-label="Previous">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                   </svg>
                 </button>
-                <button type="button" @click="slide = (slide + 1) % total"
+                <button type="button" @click="slide = (slide + 1) % carouselTotal"
                   class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 shadow-lg rounded-full p-3 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   aria-label="Next">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +115,7 @@ layout: layouts/base.njk
               {# 1 or 2 images: display large, stacked vertically #}
               <div class="space-y-6">
                 {% for img in galleryImages %}
-                  <button type="button" @click="show({{ loop.index0 }})" class="focus:outline-none rounded-xl w-full block">
+                  <button type="button" @click="show({{ loop.index0 }})" class="focus:outline-none rounded-xl w-full block" data-gallery-thumb>
                     <img src="{{ img }}"
                       alt="{{ productData.name[lang] if productData.name[lang] else title }} {{ loop.index }}"
                       class="rounded-xl shadow-md w-full h-auto object-contain bg-gray-50 p-6 cursor-zoom-in hover:shadow-lg hover:scale-[1.005] transition-all duration-200"
@@ -116,7 +127,7 @@ layout: layouts/base.njk
               {# 3-4 images: 2-column grid #}
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {% for img in galleryImages %}
-                  <button type="button" @click="show({{ loop.index0 }})" class="focus:outline-none rounded-lg w-full">
+                  <button type="button" @click="show({{ loop.index0 }})" class="focus:outline-none rounded-lg w-full" data-gallery-thumb>
                     <img src="{{ img }}"
                       alt="{{ productData.name[lang] if productData.name[lang] else title }} {{ loop.index }}"
                       class="rounded-lg shadow-md w-full h-auto object-contain bg-gray-50 p-4 cursor-zoom-in hover:shadow-lg hover:scale-[1.01] transition-all duration-200">
@@ -126,53 +137,51 @@ layout: layouts/base.njk
             {% endif %}
 
             {# ===== LIGHTBOX OVERLAY ===== #}
-            <template x-teleport="body">
-              <div
-                x-show="open"
-                x-cloak
-                x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0"
-                x-transition:enter-end="opacity-100"
-                x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0"
-                @click.self="close()"
-                class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
-                role="dialog"
-                aria-modal="true"
-                style="display: none;"
-              >
-                {# Close button #}
-                <button type="button" @click="close()"
-                  class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
-                  aria-label="Close">
-                  <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                  </svg>
-                </button>
-                {# Prev button #}
-                <button type="button" @click="prev()"
-                  class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition-all z-10"
-                  aria-label="Previous">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                  </svg>
-                </button>
-                {# Lightbox image — uses explicit lightboxSrc property for reliable rendering #}
-                <img x-bind:src="lightboxSrc" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl">
-                {# Next button #}
-                <button type="button" @click="next()"
-                  class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition-all z-10"
-                  aria-label="Next">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                {# Counter #}
-                <span x-text="(current + 1) + ' / ' + images.length"
-                  class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 text-sm tabular-nums z-10"></span>
-              </div>
-            </template>
+            <div
+              x-show="open"
+              x-cloak
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              @click.self="close()"
+              class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
+              role="dialog"
+              aria-modal="true"
+              style="display: none;"
+            >
+              {# Close button #}
+              <button type="button" @click="close()"
+                class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+                aria-label="Close">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+              {# Prev button #}
+              <button type="button" @click="prev()"
+                class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition-all z-10"
+                aria-label="Previous">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+              </button>
+              {# Lightbox image — src is extracted from the Eleventy-optimized thumbnail at runtime #}
+              <img x-ref="lightboxImg" x-bind:src="lightboxSrc" x-show="lightboxSrc" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl" eleventy:ignore>
+              {# Next button #}
+              <button type="button" @click="next()"
+                class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition-all z-10"
+                aria-label="Next">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              {# Counter #}
+              <span x-text="(current + 1) + ' / ' + total"
+                class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 text-sm tabular-nums z-10"></span>
+            </div>
 
           </div>
         {% elif productData.image %}
@@ -212,15 +221,15 @@ layout: layouts/base.njk
         {% if sectionItems.length %}
           {% for sec in sectionItems %}
             {% if loop.index is odd %}
-              {% set secBg = "bg-blue-50 border-blue-100" %}
-              {% set secTitle = "text-blue-900" %}
-              {% set secText = "text-blue-800" %}
-              {% set secBullet = "text-blue-500" %}
+              {% set secBg = "bg-blue-50 border-blue-300" %}
+              {% set secTitle = "text-blue-950" %}
+              {% set secText = "text-blue-900" %}
+              {% set secBullet = "text-blue-600" %}
             {% else %}
-              {% set secBg = "bg-emerald-50 border-emerald-100" %}
-              {% set secTitle = "text-emerald-900" %}
-              {% set secText = "text-emerald-800" %}
-              {% set secBullet = "text-emerald-500" %}
+              {% set secBg = "bg-teal-50 border-teal-300" %}
+              {% set secTitle = "text-teal-950" %}
+              {% set secText = "text-teal-900" %}
+              {% set secBullet = "text-teal-600" %}
             {% endif %}
             <div class="mt-8 p-6 rounded-lg border {{ secBg }}">
               {% if sec.title %}
@@ -278,8 +287,8 @@ layout: layouts/base.njk
 
         {# Key benefits #}
         {% if productData.benefits %}
-          <div class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-100">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].keyBenefits }}</h3>
+          <div class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-300">
+            <h3 class="text-xl font-semibold text-blue-950 mb-4">{{ translations[lang].keyBenefits }}</h3>
             <ul class="space-y-3">
               {% for benefit in productData.benefits[lang] if productData.benefits[lang] %}
                 <li class="flex items-start">
@@ -295,12 +304,12 @@ layout: layouts/base.njk
 
         {# Clinical targets — emerald/green, shown FIRST for PIUR #}
         {% if productData.clinicalTargets %}
-          <div class="mt-8 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].clinicalTargets }}</h3>
+          <div class="mt-8 p-6 bg-teal-50 rounded-lg border border-teal-300">
+            <h3 class="text-xl font-semibold text-teal-950 mb-4">{{ translations[lang].clinicalTargets }}</h3>
             <ul class="space-y-2">
               {% for target in productData.clinicalTargets[lang] if productData.clinicalTargets[lang] %}
                 <li class="flex items-center">
-                  <svg class="w-4 h-4 text-emerald-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-4 h-4 text-teal-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <circle cx="10" cy="10" r="3"/>
                   </svg>
                   <span class="text-gray-700">{{ target }}</span>
@@ -312,12 +321,12 @@ layout: layouts/base.njk
 
         {# Clinical benefits — sky/blue, shown AFTER for PIUR #}
         {% if productData.clinicalBenefits %}
-          <div class="mt-8 p-6 bg-sky-50 rounded-lg border border-sky-100">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].clinicalBenefits }}</h3>
+          <div class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-300">
+            <h3 class="text-xl font-semibold text-blue-950 mb-4">{{ translations[lang].clinicalBenefits }}</h3>
             <ul class="space-y-3">
               {% for benefit in productData.clinicalBenefits[lang] if productData.clinicalBenefits[lang] %}
                 <li class="flex items-start">
-                  <svg class="w-5 h-5 text-sky-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                   <span class="text-gray-700">{{ benefit }}</span>
