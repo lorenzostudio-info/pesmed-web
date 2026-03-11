@@ -1,65 +1,76 @@
 {# Products section - used on homepage AND products index page #}
-<section class="py-16 md:py-24 bg-gray-50">
+{# On homepage: scroll-triggered bg transition from white to #2A65C1 #}
+{# On products page: static #2A65C1 background #}
+
+{% set isHome = (title == "Home") %}
+
+<section
+  id="products-section"
+  class="py-16 md:py-24 transition-colors duration-700 ease-in-out {{ 'bg-white' if isHome else '' }}"
+  {% if not isHome %}style="background-color: #2A65C1;"{% endif %}
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ translations[lang].productsTitle }}</h2>
-      <p class="text-gray-600 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed">{{ translations[lang].productsIntro }}</p>
+      <h2 class="products-title text-4xl md:text-5xl font-bold mb-4 transition-colors duration-700 {{ 'text-[#141570]' if isHome else 'text-white' }}">
+        {{ translations[lang].productsTitle }}
+      </h2>
+      <p class="products-intro max-w-4xl mx-auto text-lg md:text-xl leading-relaxed transition-colors duration-700 {{ 'text-gray-600' if isHome else 'text-white/80' }}">
+        {{ translations[lang].productsIntro }}
+      </p>
     </div>
 
-    {% set categoryIcons = {
-      "cryotherapy-ablation": '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2m-7-9H3m18 0h-2m-2.636-5.364l-1.414 1.414M7.05 16.95l-1.414 1.414m0-12.728l1.414 1.414M16.95 16.95l1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"/>',
-      "electroporation-therapy": '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>',
-      "surgical-navigation-imaging": '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>'
-    } %}
-
-    {% set categoryColors = {
-      "cryotherapy-ablation": { "bg": "bg-blue-50", "border": "border-blue-300", "accent": "text-blue-800", "chip": "bg-blue-100 text-blue-800", "iconBg": "bg-blue-100" },
-      "electroporation-therapy": { "bg": "bg-orange-50", "border": "border-orange-300", "accent": "text-orange-800", "chip": "bg-orange-100 text-orange-800", "iconBg": "bg-orange-100" },
-      "surgical-navigation-imaging": { "bg": "bg-teal-50", "border": "border-teal-300", "accent": "text-teal-800", "chip": "bg-teal-100 text-teal-800", "iconBg": "bg-teal-100" }
-    } %}
-
     {% set categories = products | getCategories %}
-
-    {# Short display names for the product cards #}
-    {% set shortNames = {
-      "cryotherapy-prosense": { "en": "ProSense", "it": "ProSense" },
-      "robotic-navigation-micromate": { "en": "Micromate", "it": "Micromate" },
-      "endoscopic-electroporation-endove": { "en": "EndoVE", "it": "EndoVE" },
-      "cutaneous-electroporation-cutis": { "en": "CUTIS", "it": "CUTIS" },
-      "patient-positioning-ifix": { "en": "iFIX", "it": "iFIX" },
-      "biomarker-analysis-pearlfit": { "en": "PearlFit", "it": "PearlFit" },
-      "3d-ultrasound-tomography-piur": { "en": "PIUR Infinity", "it": "PIUR Infinity" }
+    {% set categoryIcons = {
+      "cryotherapy-ablation": '<path d="M3 7L6.5 9M21 17L17.5 15M12 12L6.5 9M12 12L6.5 15M12 12V5M12 12V18.5M12 12L17.5 15M12 12L17.5 9M12 2V5M12 22V18.5M21 7L17.5 9M3 17L6.5 15M6.5 9L3 10M6.5 9L6 5.5M6.5 15L3 14M6.5 15L6 18.5M12 5L9.5 4M12 5L14.5 4M12 18.5L14.5 20M12 18.5L9.5 20M17.5 15L18 18.5M17.5 15L21 14M17.5 9L21 10M17.5 9L18 5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>',
+      "electroporation-therapy": '<path d="M13 10V3L5 14H11V21L19 10H13Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>',
+      "surgical-navigation-imaging": '<path d="M10.5857 10.5857L16.9496 7.0502L13.4141 13.4142L7.05012 16.9497L10.5857 10.5857Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>'
+    } %}
+    {% set shortCategoryNames = {
+      "en": {
+        "cryotherapy-ablation": "Cryoablation",
+        "electroporation-therapy": "Electroporation",
+        "surgical-navigation-imaging": "Navigation & Imaging"
+      },
+      "it": {
+        "cryotherapy-ablation": "Crioablazione",
+        "electroporation-therapy": "Elettroporazione",
+        "surgical-navigation-imaging": "Navigazione & Imaging"
+      }
     } %}
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
       {% for cat in categories %}
         {% set catProducts = products | filterByCategory(cat) %}
-        {% set colors = categoryColors[cat] %}
+        {% set catName = shortCategoryNames[lang][cat] | default(translations[lang].categories[cat]) %}
         {% set icon = categoryIcons[cat] %}
-        {% set catName = translations[lang].categories[cat] %}
 
-        <div class="rounded-2xl border-2 {{ colors.border }} {{ colors.bg }} p-7">
-          <div class="flex items-center mb-7">
-            <div class="{{ colors.iconBg }} rounded-xl p-3 mr-4 shrink-0">
-              <svg class="w-7 h-7 {{ colors.accent }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">{{ icon | safe }}</svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 leading-tight">{{ catName }}</h3>
+        <div class="products-column">
+          {# Category heading #}
+          <div class="products-heading-row flex items-start mb-0 pb-4 pl-14" style="border-bottom: 1px solid {{ '#e5e7eb' if isHome else 'rgba(255,255,255,0.25)' }};">
+            <h3 class="products-cat-title text-xl md:text-2xl font-bold leading-tight tracking-wide transition-colors duration-700 {{ 'text-[#141570]' if isHome else 'text-white' }}">
+              {{ catName }}
+            </h3>
           </div>
 
-          <div class="space-y-4">
+          {# Product list #}
+          <div class="space-y-0">
             {% for product in catProducts %}
-              {% set displayName = shortNames[product.slug][lang] if shortNames[product.slug] else (product.name[lang] | default(product.name.it)) %}
-              <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}" class="group block bg-white/90 border border-white rounded-xl px-5 py-4 hover:border-gray-200 hover:shadow-md transition-all duration-200">
-                <div class="flex items-center justify-between gap-4">
-                  <div class="min-w-0">
-                    <p class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">{{ displayName }}</p>
-                    <p class="text-sm text-gray-500 truncate mt-1">{{ product.manufacturer }}</p>
-                  </div>
-                  <div class="shrink-0">
-                    <span class="inline-flex items-center text-blue-600 text-sm font-semibold group-hover:translate-x-1 transition-transform duration-200">
-                      {{ translations[lang].viewProduct }}
-                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </span>
+              <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}"
+                 class="products-row group flex items-center py-5 {{ 'border-b border-gray-200' if isHome else '' }}"
+                 {% if not isHome %}style="border-bottom: 1px solid rgba(255,255,255,0.15);"{% endif %}
+              >
+                <div class="flex items-center gap-4 w-full">
+                  <span class="products-leading-icon shrink-0 w-10 flex justify-center transition-colors duration-700 {{ 'text-[#2A65C1]' if isHome else 'text-white/70' }}">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">{{ icon | safe }}</svg>
+                  </span>
+                  <div class="flex-1 min-w-0">
+                    <p class="products-name text-xl md:text-2xl font-light leading-tight transition-colors duration-700 group-hover:opacity-80 {{ 'text-[#141570]' if isHome else 'text-white' }}">
+                      {{ product.name[lang] | default(product.name.it) }}:
+                      {{ product.subtitle[lang] | default(product.subtitle.it) }}
+                    </p>
+                    <p class="products-manufacturer text-sm mt-1 transition-colors duration-700 {{ 'text-gray-500' if isHome else 'text-white/60' }}">
+                      {{ product.manufacturer }}
+                    </p>
                   </div>
                 </div>
               </a>
@@ -70,3 +81,136 @@
     </div>
   </div>
 </section>
+
+{% if isHome %}
+<script>
+(function() {
+  const section = document.getElementById('products-section');
+  if (!section) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const ratio = entry.intersectionRatio;
+      const active = ratio > 0.25;
+
+      // Background
+      section.style.backgroundColor = active ? '#2A65C1' : '#ffffff';
+
+      // Title
+      section.querySelectorAll('.products-title').forEach(el => {
+        el.classList.toggle('text-[#141570]', !active);
+        el.classList.toggle('text-white', active);
+      });
+
+      // Intro text
+      section.querySelectorAll('.products-intro').forEach(el => {
+        el.classList.toggle('text-gray-600', !active);
+        el.classList.toggle('text-white/80', active);
+      });
+
+      // Category titles
+      section.querySelectorAll('.products-cat-title').forEach(el => {
+        el.classList.toggle('text-[#141570]', !active);
+        el.classList.toggle('text-white', active);
+      });
+
+      // Leading icons
+      section.querySelectorAll('.products-leading-icon').forEach(el => {
+        el.classList.toggle('text-[#2A65C1]', !active);
+        el.classList.toggle('text-white/70', active);
+      });
+
+      // Product names
+      section.querySelectorAll('.products-name').forEach(el => {
+        el.classList.toggle('text-[#141570]', !active);
+        el.classList.toggle('text-white', active);
+      });
+
+      // Manufacturer
+      section.querySelectorAll('.products-manufacturer').forEach(el => {
+        el.classList.toggle('text-gray-500', !active);
+        el.classList.toggle('text-white/60', active);
+      });
+
+      // Borders
+      const borderColor = active ? 'rgba(255,255,255,0.15)' : '#e5e7eb';
+      section.querySelectorAll('.group').forEach(el => {
+        el.style.borderBottomColor = borderColor;
+      });
+
+      // Category heading borders
+      const catBorderColor = active ? 'rgba(255,255,255,0.25)' : '#e5e7eb';
+      section.querySelectorAll('.products-heading-row').forEach(el => {
+        el.style.borderBottomColor = catBorderColor;
+      });
+    });
+  }, {
+    threshold: [0, 0.1, 0.15, 0.2, 0.25, 0.3, 0.5]
+  });
+
+  observer.observe(section);
+})();
+</script>
+{% endif %}
+
+<script>
+(function() {
+  const section = document.getElementById('products-section');
+  if (!section) return;
+
+  const equalizeRows = () => {
+    const columns = Array.from(section.querySelectorAll('.products-column'));
+    if (!columns.length) return;
+
+    columns.forEach(column => {
+      const heading = column.querySelector('.products-heading-row');
+      if (heading) heading.style.minHeight = '';
+      column.querySelectorAll('.products-row').forEach(row => {
+        row.style.minHeight = '';
+      });
+    });
+
+    const headingHeights = columns
+      .map(column => column.querySelector('.products-heading-row'))
+      .filter(Boolean)
+      .map(heading => heading.offsetHeight);
+
+    if (headingHeights.length) {
+      const maxHeadingHeight = Math.max(...headingHeights);
+      columns.forEach(column => {
+        const heading = column.querySelector('.products-heading-row');
+        if (heading) heading.style.minHeight = `${maxHeadingHeight}px`;
+      });
+    }
+
+    const maxRows = Math.max(...columns.map(column => column.querySelectorAll('.products-row').length));
+
+    for (let index = 0; index < maxRows; index += 1) {
+      const rowsAtIndex = columns
+        .map(column => column.querySelectorAll('.products-row')[index])
+        .filter(Boolean);
+
+      if (!rowsAtIndex.length) continue;
+
+      const maxHeight = Math.max(...rowsAtIndex.map(row => row.offsetHeight));
+      rowsAtIndex.forEach(row => {
+        row.style.minHeight = `${maxHeight}px`;
+      });
+    }
+  };
+
+  let rafId = null;
+  const scheduleEqualizeRows = () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(equalizeRows);
+  };
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleEqualizeRows);
+  }
+
+  window.addEventListener('load', scheduleEqualizeRows);
+  window.addEventListener('resize', scheduleEqualizeRows);
+  scheduleEqualizeRows();
+})();
+</script>
