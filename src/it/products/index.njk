@@ -9,4 +9,7 @@ permalink: /it/products/
 {% set breadcrumbs = [{label: translations[lang].products}] %}
 {% include "partials/breadcrumb.njk" %}
 
+{% set pageTitle = translations[lang].products %}
+{% include "partials/page-header.njk" %}
+
 {% include "partials/products-section.njk" %}
