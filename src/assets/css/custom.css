@@ -1,0 +1,9 @@
+/* Custom styles for small UI helpers that are not covered by Tailwind utilities */
+
+html {
+  scroll-behavior: smooth;
+}
+
+[x-cloak] {
+  display: none !important;
+}
