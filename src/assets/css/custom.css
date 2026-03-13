@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
 [x-cloak] {
   display: none !important;
 }
