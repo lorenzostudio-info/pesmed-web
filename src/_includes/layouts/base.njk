@@ -8,11 +8,13 @@
 
         {% include "partials/analytics.njk" %}
 
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="/assets/css/styles.css"/>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <style>[x-cloak] { display: none !important; }</style>
     </head>
-    <body class="bg-white text-gray-800 antialiased pt-20">
+    <body class="bg-white text-gray-800 antialiased pt-20" style="font-family: 'League Spartan', sans-serif;">
         {% include "partials/header.njk" %}
         <main>
             {{ content | safe }}
