@@ -7,6 +7,6 @@
   "email": "contact@pesmed.it",
   "phone": "+31 123 456 7890",
   "address": "2946 Angus Road, NY",
-  "logo": "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/08/Logo-PesMed-2025.png",
-  "footerLogo": "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/08/Logo-PesMed-2025-1024x723.png"
+  "logo": "/assets/images/logo.png",
+  "footerLogo": "/assets/images/logo.png"
 }
