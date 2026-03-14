@@ -34,7 +34,8 @@
     "backToProducts": "Back to Products",
     "backToNews": "Back to News",
     "rssFeed": "RSS Feed",
-    "youtubeChannel": "YouTube Channel"
+    "youtubeChannel": "YouTube Channel",
+    "followOnLinkedIn": "Follow on LinkedIn"
   },
   "it": {
     "siteTitle": "PesMed",
@@ -71,6 +72,7 @@
     "backToProducts": "Torna ai Prodotti",
     "backToNews": "Torna alle News",
     "rssFeed": "Feed RSS",
-    "youtubeChannel": "Canale YouTube"
+    "youtubeChannel": "Canale YouTube",
+    "followOnLinkedIn": "Seguici su LinkedIn"
   }
 }
