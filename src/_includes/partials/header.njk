@@ -1,4 +1,4 @@
-<header x-data="{ open: false }" class="absolute w-full top-0 z-50 bg-black/5 border-b border-white/10">
+<header x-data="{ open: false }" class="absolute w-full top-0 z-50 bg-transparent md:bg-black/5 border-b border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       {# Logo #}
@@ -16,13 +16,12 @@
 
       {# Language switch + mobile toggle #}
       <div class="flex items-center space-x-4">
-        <div class="flex items-center space-x-1 text-sm">
+        <div class="hidden md:flex items-center space-x-2 text-base">
           {% set links = page.url | locale_links %}
           {% for l in links %}
-            <a href="{{ l.url }}" class="px-2 py-1 rounded {% if l.lang == lang %}bg-white/25 text-white{% else %}text-white/85 hover:bg-white/20 hover:text-white{% endif %} transition-colors">{{ l.lang | upper }}</a>
+            <a href="{{ l.url }}" class="px-1 {% if l.lang == lang %}underline underline-offset-4 text-white{% else %}text-white hover:underline hover:underline-offset-4{% endif %} transition-colors tracking-wide uppercase font-medium">{{ l.lang | upper }}</a>
           {% endfor %}
         </div>
-
         {# Mobile hamburger #}
         <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
           <svg x-show="!open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,11 +36,17 @@
 
     {# Mobile menu #}
     <div x-show="open" x-cloak @click.outside="open = false" class="md:hidden pb-4">
-      <nav class="flex flex-col space-y-2 bg-black/35 rounded-lg p-3">
+      <nav class="flex flex-col space-y-2 bg-black/65 backdrop-blur-md border border-white/15 rounded-lg p-3 shadow-lg">
         <a href="{{ '/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].home }}</a>
         <a href="{{ '/products/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].products }}</a>
         <a href="{{ '/articles/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].articles }}</a>
         <a href="{{ '/contact/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].contact }}</a>
+        <div class="flex items-center space-x-2 pt-2 border-t border-white/10 mt-2">
+          {% set links = page.url | locale_links %}
+          {% for l in links %}
+            <a href="{{ l.url }}" class="flex-1 text-center text-base px-1 py-0.5 {% if l.lang == lang %}underline underline-offset-4 text-white{% else %}text-white hover:underline hover:underline-offset-4{% endif %} transition-colors tracking-wide uppercase font-medium">{{ l.lang | upper }}</a>
+          {% endfor %}
+        </div>
       </nav>
     </div>
   </div>
