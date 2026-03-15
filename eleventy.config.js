@@ -3,7 +3,7 @@ import { I18nPlugin } from "@11ty/eleventy";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 export default async function(eleventyConfig) {
-	
+
 	// Image Transform works independently, takes <img> on html and transforms automatically
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		extensions: "html",
