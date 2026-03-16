@@ -8,7 +8,7 @@
     "css:watch": "npx @tailwindcss/cli -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --watch",
     "dev": "npx @tailwindcss/cli -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --watch & eleventy --serve",
     "build": "eleventy && npx @tailwindcss/cli -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --minify",
-    "devwin": "concurrently \"npx @tailwindcss/cli -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --watch\" \"npx eleventy --serve\""
+    "devwin": "start /B npx @tailwindcss/cli -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --watch && npx eleventy --serve"
   },
   "repository": {
     "type": "git",
