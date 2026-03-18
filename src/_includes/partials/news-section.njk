@@ -1,5 +1,4 @@
-{# News section - used on homepage, shows latest articles #}
-{% set articleCollection = collections["articles_" + lang] %}
+{# News section - used on homepage, shows latest news from JSON #}
 <section class="py-16 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
@@ -7,26 +6,30 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {% for post in articleCollection | head(6) %}
+      {% for post in news | head(6) %}
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group">
-          {% if post.data.image and "/assets/" in post.data.image %}
-            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
-          {% elif post.data.image %}
-            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
+          {% set postTitle = post.title[lang] if post.title[lang] else post.title.it %}
+          {% set postExcerpt = post.excerpt[lang] if post.excerpt[lang] else post.excerpt.it %}
+          {% set postUrl = ('/news/' + post.slug + '/') | locale_url %}
+
+          {% if post.image and "/assets/" in post.image %}
+            <img src="{{ post.image }}" alt="{{ postTitle }}" class="w-full h-48 object-cover">
+          {% elif post.image %}
+            <img src="{{ post.image }}" alt="{{ postTitle }}" class="w-full h-48 object-cover">
           {% else %}
             <div class="w-full h-48 bg-blue-100 flex items-center justify-center">
-              <span class="text-blue-400 text-4xl font-bold">{{ post.data.title | first }}</span>
+              <span class="text-blue-400 text-4xl font-bold">{{ postTitle | first }}</span>
             </div>
           {% endif %}
           <div class="p-6">
-            <time class="text-sm text-blue-600 font-medium" datetime="{{ post.date.toISOString() }}">
-              {{ post.date.toISOString().slice(0,10) }}
+            <time class="text-sm text-blue-600 font-medium" datetime="{{ post.date }}">
+              {{ post.date }}
             </time>
             <h3 class="mt-2 text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-              <a href="{{ post.url }}">{{ post.data.title }}</a>
+              <a href="{{ postUrl }}">{{ postTitle }}</a>
             </h3>
-            <p class="mt-2 text-gray-600 text-sm line-clamp-3">{{ post.data.description }}</p>
-            <a href="{{ post.url }}" class="mt-4 inline-block text-blue-600 hover:text-blue-700 font-medium text-sm">{{ translations[lang].readMore }} →</a>
+            <p class="mt-2 text-gray-600 text-sm line-clamp-3">{{ postExcerpt }}</p>
+            <a href="{{ postUrl }}" class="mt-4 inline-block text-blue-600 hover:text-blue-700 font-medium text-sm">{{ translations[lang].readMore }} →</a>
           </div>
         </article>
       {% endfor %}

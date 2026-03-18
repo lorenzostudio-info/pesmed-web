@@ -1,0 +1,16 @@
+---
+pagination:
+  data: news
+  size: 1
+  alias: newsItem
+layout: layouts/news.njk
+lang: en
+tags:
+  - news_en
+eleventyComputed:
+  title: "{{ newsItem.title[lang] if newsItem.title[lang] else newsItem.title.it }}"
+  description: "{{ newsItem.excerpt[lang] if newsItem.excerpt[lang] else newsItem.excerpt.it }}"
+  permalink: "/{{ lang }}/news/{{ newsItem.slug }}/"
+  newsSlug: "{{ newsItem.slug }}"
+  date: "{{ newsItem.date }}"
+---

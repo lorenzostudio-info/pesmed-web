@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+---
+
+{% set newsData = news | findBySlug(newsSlug) %}
+{% set articleTitle = newsData.title[lang] if newsData.title[lang] else title %}
+{% set articleContent = newsData.content[lang] if newsData.content[lang] else newsData.content.it %}
+
+{% set breadcrumbs = [{label: translations[lang].articles, url: '/news/' | locale_url}, {label: articleTitle}] %}
+{% include "partials/breadcrumb.njk" %}
+
+{% set pageTitle = articleTitle %}
+{% include "partials/page-header.njk" %}
+
+<article class="py-12 md:py-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      {% if newsData.date %}
+        <time class="text-sm text-blue-600 font-medium uppercase" datetime="{{ newsData.date }}">{{ newsData.date }}</time>
+      {% endif %}
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{{ articleTitle }}</h1>
+    </div>
+
+    {% if newsData.image and not "/assets/social" in newsData.image %}
+      <img src="{{ newsData.image }}" alt="{{ articleTitle }}" class="w-full rounded-lg shadow-md mb-8 max-h-96 object-cover">
+    {% endif %}
+
+    {% if articleContent %}
+      <div class="prose prose-lg max-w-none whitespace-pre-line">
+        {{ articleContent }}
+      </div>
+    {% endif %}
+
+    {% if newsData.attachment and newsData.attachment.length %}
+      <div class="mt-10 pt-8 border-t border-gray-200">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">{{ translations[lang].moreInfo }}</h2>
+        <ul class="space-y-3">
+          {% for item in newsData.attachment %}
+            <li>
+              <a href="{{ item.url }}" {% if item.type == 'link' %}target="_blank" rel="noopener"{% endif %} class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                {{ item.label }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <a href="{{ '/news/' | locale_url }}" class="text-blue-600 hover:text-blue-800 font-medium">← {{ translations[lang].backToNews }}</a>
+    </div>
+  </div>
+</article>

@@ -8,7 +8,7 @@
 {% set ogImage = (site.url ~ image) if image else 
     site.logo %}
 
-{% set isArticle = page.url and ("/articles/" in page.url) %}
+{% set isArticle = page.url and (("/articles/" in page.url) or ("/news/" in page.url)) %}
 {% set isProduct = page.url and ("/products/" in page.url) %}
 {% set ogType = "article" if isArticle else 
     "website" %}

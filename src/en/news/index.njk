@@ -1,8 +1,9 @@
 ---
 layout: layouts/base.njk
 title: News
-lang: it
-description: "Ultime notizie ed eventi PesMed nel settore dei dispositivi medici."
+lang: en
+description: "Latest news and events from PesMed in the medical device sector."
+permalink: /en/news/
 ---
 
 {% set breadcrumbs = [{label: translations[lang].articles}] %}
@@ -14,31 +15,35 @@ description: "Ultime notizie ed eventi PesMed nel settore dei dispositivi medici
 <section class="py-12 md:py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {% for post in collections.articles_it %}
+      {% for post in news %}
+        {% set postTitle = post.title[lang] if post.title[lang] else post.title.it %}
+        {% set postExcerpt = post.excerpt[lang] if post.excerpt[lang] else post.excerpt.it %}
+        {% set postUrl = ('/news/' + post.slug + '/') | locale_url %}
+
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group">
-          {% if post.data.image and not "/assets/social" in post.data.image %}
-            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
+          {% if post.image and not "/assets/social" in post.image %}
+            <img src="{{ post.image }}" alt="{{ postTitle }}" class="w-full h-48 object-cover">
           {% else %}
             <div class="w-full h-48 bg-blue-100 flex items-center justify-center">
-              <span class="text-blue-400 text-4xl font-bold">{{ post.data.title | first }}</span>
+              <span class="text-blue-400 text-4xl font-bold">{{ postTitle | first }}</span>
             </div>
           {% endif %}
           <div class="p-6">
-            <time class="text-sm text-blue-600 font-medium uppercase" datetime="{{ post.date.toISOString() }}">
-              {{ post.date.toISOString().slice(0,10) }}
+            <time class="text-sm text-blue-600 font-medium uppercase" datetime="{{ post.date }}">
+              {{ post.date }}
             </time>
             <h3 class="mt-2 text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-              <a href="{{ post.url }}">{{ post.data.title }}</a>
+              <a href="{{ postUrl }}">{{ postTitle }}</a>
             </h3>
-            <p class="mt-2 text-gray-600 text-sm line-clamp-3">{{ post.data.description }}</p>
-            <a href="{{ post.url }}" class="mt-4 inline-block text-blue-600 hover:text-blue-700 font-medium text-sm">{{ translations[lang].readMore }} →</a>
+            <p class="mt-2 text-gray-600 text-sm line-clamp-3">{{ postExcerpt }}</p>
+            <a href="{{ postUrl }}" class="mt-4 inline-block text-blue-600 hover:text-blue-700 font-medium text-sm">{{ translations[lang].readMore }} →</a>
           </div>
         </article>
       {% endfor %}
     </div>
 
     <div class="mt-12 text-center">
-      <a href="{{ '/articles/feed.xml' | locale_url }}" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
+      <a href="{{ '/news/feed.xml' | locale_url }}" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
         {{ translations[lang].rssFeed }}
       </a>
