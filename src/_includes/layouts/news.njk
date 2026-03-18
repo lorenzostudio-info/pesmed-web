@@ -23,7 +23,7 @@ layout: layouts/base.njk
 {% include "partials/page-header.njk" %}
 
 <article class="py-12 md:py-20">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8">
       {% if newsData.date %}
         <time class="text-sm text-blue-600 font-medium uppercase" datetime="{{ newsData.date }}">{{ newsData.date }}</time>
@@ -32,7 +32,39 @@ layout: layouts/base.njk
     </div>
 
     {% if newsData.image and not "/assets/social" in newsData.image %}
-      <img src="{{ newsData.image }}" alt="{{ articleTitle }}" class="w-full rounded-lg shadow-md mb-8 max-h-96 object-cover">
+      <div
+        x-data="{ open: false, lightboxSrc: '{{ newsData.image }}', close() { this.open = false; } }"
+        @keydown.escape.window="if(open) close()"
+      >
+        <button type="button" @click="open = true" class="w-full block focus:outline-none rounded-lg">
+          <img src="{{ newsData.image }}" alt="{{ articleTitle }}" class="w-full rounded-lg shadow-md mb-8 max-h-96 object-cover cursor-zoom-in hover:shadow-lg transition-shadow duration-200">
+        </button>
+
+        <div
+          x-show="open"
+          x-cloak
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          @click.self="close()"
+          class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button type="button" @click="close()"
+            class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+            aria-label="Close">
+            <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+
+          <img x-bind:src="lightboxSrc" x-show="lightboxSrc" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl" eleventy:ignore>
+        </div>
+      </div>
     {% endif %}
 
     {% if structuredContent %}
@@ -88,7 +120,7 @@ layout: layouts/base.njk
               </svg>
             </span> #}
             <div class="flex-1">
-              <p class="mt-1 text-base leading-relaxed text-slate-700 whitespace-pre-line">{{ structuredContent.description }}</p>
+              <p class="mt-1 text-base leading-relaxed text-slate-700 text-justify [text-justify:inter-word]">{{ structuredContent.description }}</p>
             </div>
           </div>
         </div>
