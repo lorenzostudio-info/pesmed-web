@@ -5,6 +5,16 @@ layout: layouts/base.njk
 {% set newsData = news | findBySlug(newsSlug) %}
 {% set articleTitle = newsData.title[lang] if newsData.title[lang] else title %}
 {% set articleContent = newsData.content[lang] if newsData.content[lang] else newsData.content.it %}
+{% if articleContent and articleContent.title is defined %}
+  {% set structuredContent = articleContent %}
+{% else %}
+  {% set structuredContent = {
+    title: articleTitle,
+    date: newsData.date,
+    place: '',
+    description: articleContent
+  } %}
+{% endif %}
 
 {% set breadcrumbs = [{label: translations[lang].articles, url: '/news/' | locale_url}, {label: articleTitle}] %}
 {% include "partials/breadcrumb.njk" %}
@@ -25,9 +35,63 @@ layout: layouts/base.njk
       <img src="{{ newsData.image }}" alt="{{ articleTitle }}" class="w-full rounded-lg shadow-md mb-8 max-h-96 object-cover">
     {% endif %}
 
-    {% if articleContent %}
-      <div class="prose prose-lg max-w-none whitespace-pre-line">
-        {{ articleContent }}
+    {% if structuredContent %}
+      <div class="mt-8 divide-y divide-slate-200">
+        <div class="py-5">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-[#2A65C1]">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 5.25h12A2.25 2.25 0 0 1 20.25 7.5v9A2.25 2.25 0 0 1 18 18.75H6A2.25 2.25 0 0 1 3.75 16.5v-9A2.25 2.25 0 0 1 6 5.25Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9.75h7.5M8.25 13.5h4.5" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-base font-semibold text-slate-900">{{ structuredContent.title if structuredContent.title else articleTitle }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-5">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-[#2A65C1]">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3.75h10.5A2.25 2.25 0 0 1 19.5 6v11.25a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 17.25V6a2.25 2.25 0 0 1 2.25-2.25Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 2.25v3M15.75 2.25v3M7.5 9.75h9" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-base font-semibold text-slate-900">{{ structuredContent.date if structuredContent.date else newsData.date }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-5">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-[#2A65C1]">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.5-4.62 6.75-8.02 6.75-10.5a6.75 6.75 0 1 0-13.5 0C5.25 12.98 7.5 16.38 12 21Z" />
+                <circle cx="12" cy="10.5" r="2.25" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-base font-semibold text-slate-900">{{ structuredContent.place }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-5">
+          <div class="flex items-start">
+            {# <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-[#2A65C1]">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3.75h10.5A2.25 2.25 0 0 1 19.5 6v12a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 18V6a2.25 2.25 0 0 1 2.25-2.25Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 8.25h7.5M8.25 12h7.5M8.25 15.75h4.5" />
+              </svg>
+            </span> #}
+            <div class="flex-1">
+              <p class="mt-1 text-base leading-relaxed text-slate-700 whitespace-pre-line">{{ structuredContent.description }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     {% endif %}
 
