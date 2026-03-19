@@ -7,7 +7,7 @@ export default async function (eleventyConfig) {
 	// Image Transform works independently, takes <img> on html and transforms automatically
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		extensions: "html",
-		formats: ["webp", "jpeg"],
+		formats: ["webp", "jpeg", "jpg"],
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",

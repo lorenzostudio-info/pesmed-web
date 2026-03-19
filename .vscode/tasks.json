@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Bundle Alpine.js with esbuild",
+			"type": "shell",
+			"command": "npx esbuild src/assets/js/alpine.js --bundle --outfile=_site/assets/js/alpine.js --format=esm --minify",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+/* Custom styles for small UI helpers that are not covered by Tailwind utilities */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
+[x-cloak] {
+  display: none !important;
+}
