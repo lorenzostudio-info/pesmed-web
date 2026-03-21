@@ -1,0 +1,734 @@
+{
+  "meta": {
+    "lastUpdated": {
+      "en": "March 2026",
+      "it": "Marzo 2026"
+    }
+  },
+  "privacyPolicy": {
+    "en": {
+      "title": "Privacy Policy",
+      "intro": "This Privacy Policy describes how PES MED Società Consortile a Responsabilità Limitata (Pesmed S.c.a.r.l.), which operates the website WWW.PESMED.IT (“we”, “us”, or “our”), collects, uses, and protects personal data in accordance with applicable data protection laws, including the General Data Protection Regulation (GDPR).",
+      "sections": [
+        {
+          "id": "pp-1",
+          "number": "1",
+          "title": "Data Controller",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The data controller is:"
+            },
+            {
+              "type": "address",
+              "lines": [
+                "PES MED Società Consortile a Responsabilità Limitata (Pesmed S.c.a.r.l.)",
+                "PIAZZA DEL POPOLO 8/D",
+                "44034 Copparo (FE), Italy",
+                "Email: info@pesmed.it"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "No Data Protection Officer (DPO) has been appointed, as it is not required by applicable law."
+            }
+          ]
+        },
+        {
+          "id": "pp-2",
+          "number": "2",
+          "title": "Types of data collected",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We collect a minimal amount of personal data."
+            },
+            {
+              "type": "subsection",
+              "title": "a) Data provided voluntarily",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Email address, only when you contact us by email (mailto link)."
+                }
+              ]
+            },
+            {
+              "type": "subsection",
+              "title": "b) Data collected automatically",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Through Cloudflare Analytics, we may collect:"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    "Aggregated and anonymized usage data",
+                    "Device and browser information (non-identifying)",
+                    "Approximate and anonymized location data"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "callout",
+              "variant": "warning",
+              "title": "We do not collect:",
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    "Names",
+                    "Phone numbers",
+                    "Addresses",
+                    "Payment data",
+                    "Account data",
+                    "User-generated content"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-3",
+          "number": "3",
+          "title": "How data is collected",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Data is collected exclusively through:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Direct communication: when you send us an email",
+                "Automatic collection: via Cloudflare Analytics",
+                "Third-party resources: use of Google Fonts"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "We do not use:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Forms",
+                "User accounts",
+                "Cookies or tracking technologies"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-4",
+          "number": "4",
+          "title": "Purposes of processing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We process data exclusively for the following purposes:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Responding to user inquiries (support)",
+                "Providing and maintaining the website",
+                "Analyzing website performance and improving services (via Cloudflare Analytics)"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "We do not use data for:"
+            },
+            {
+              "type": "list",
+              "items": ["Marketing", "Profiling", "Automated decision-making"]
+            }
+          ]
+        },
+        {
+          "id": "pp-5",
+          "number": "5",
+          "title": "Legal basis for processing (GDPR)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We process personal data on the basis of:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Legitimate interest (Art. 6(1)(f) GDPR): to ensure proper functioning, security, and improvement of the website.",
+                "Pre-contractual measures (Art. 6(1)(b) GDPR): when responding to inquiries sent by users via email."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "We do not rely on consent for tracking or cookies, as we do not use such technologies."
+            }
+          ]
+        },
+        {
+          "id": "pp-6",
+          "number": "6",
+          "title": "Data sharing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We do not sell or disclose personal data."
+            },
+            {
+              "type": "paragraph",
+              "text": "However, limited data may be processed by trusted service providers:"
+            },
+            {
+              "type": "providers",
+              "items": [
+                {
+                  "name": "Cloudflare, Inc.",
+                  "details": [
+                    "Hosting (Cloudflare Pages)",
+                    "Analytics (privacy-focused, no cookies)"
+                  ]
+                },
+                {
+                  "name": "Google Fonts",
+                  "details": ["Used to display the website typography."]
+                },
+                {
+                  "name": "Alpine.js (CDN)",
+                  "details": [
+                    "Used to enable interactive features on the website."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "These providers process data in accordance with their respective privacy policies."
+            }
+          ]
+        },
+        {
+          "id": "pp-7",
+          "number": "7",
+          "title": "International data transfers",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Some services we use (e.g., Cloudflare, Google) may transfer data outside of the European Economic Area (EEA)."
+            },
+            {
+              "type": "paragraph",
+              "text": "In such cases, transfers are safeguarded through:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Standard Contractual Clauses (SCCs) approved by the European Commission",
+                "Or other lawful transfer mechanisms under the GDPR"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-8",
+          "number": "8",
+          "title": "Data retention",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We retain data only for as long as necessary:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Emails: kept for the time necessary to respond and manage communications",
+                "Analytics data: managed by Cloudflare according to its retention policies"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "We do not store users’ identifying data on our systems."
+            }
+          ]
+        },
+        {
+          "id": "pp-9",
+          "number": "9",
+          "title": "User rights",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Under the GDPR, you have the right to:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Access your data",
+                "Rectify inaccurate data",
+                "Request deletion (right to be forgotten)",
+                "Restrict processing",
+                "Data portability",
+                "Object to processing",
+                "Withdraw consent (if applicable)"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "To exercise your rights, contact: info@pesmed.it"
+            },
+            {
+              "type": "callout",
+              "variant": "note",
+              "title": "Note",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Since we collect minimal or no personal data, the exercise of these rights may be limited in practice."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-10",
+          "number": "10",
+          "title": "Cookies",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We do not use cookies or similar tracking technologies."
+            }
+          ]
+        },
+        {
+          "id": "pp-11",
+          "number": "11",
+          "title": "Security measures",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We implement appropriate technical and organizational measures, including:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Data encryption",
+                "Access control systems",
+                "Secure hosting infrastructure (Cloudflare)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-12",
+          "number": "12",
+          "title": "Children’s data",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Our website is not intended for minors and we do not knowingly collect data from minors."
+            }
+          ]
+        },
+        {
+          "id": "pp-13",
+          "number": "13",
+          "title": "Changes to this Privacy Policy",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "We may update this Privacy Policy from time to time."
+            },
+            {
+              "type": "paragraph",
+              "text": "Any changes will be published on this page with an updated revision date."
+            }
+          ]
+        },
+        {
+          "id": "pp-14",
+          "number": "14",
+          "title": "Contacts",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "For any questions regarding this Privacy Policy:"
+            },
+            {
+              "type": "paragraph",
+              "text": "PES MED S.c.a.r.l., Copparo (FE), Italy"
+            }
+          ]
+        }
+      ]
+    },
+    "it": {
+      "title": "Privacy Policy",
+      "intro": "La presente Privacy Policy descrive come PES MED Società Consortile a Responsabilità Limitata (Pesmed S.c.a.r.l.), che gestisce il sito web WWW.PESMED.IT (“noi”, “ci” o “nostro”), raccoglie, utilizza e protegge i dati personali in conformità alle leggi applicabili in materia di protezione dei dati, incluso il Regolamento Generale sulla Protezione dei Dati (GDPR).",
+      "sections": [
+        {
+          "id": "pp-1",
+          "number": "1",
+          "title": "Titolare del trattamento",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Il titolare del trattamento è:"
+            },
+            {
+              "type": "address",
+              "lines": [
+                "PES MED Società Consortile a Responsabilità Limitata (Pesmed S.c.a.r.l.)",
+                "PIAZZA DEL POPOLO 8/D",
+                "44034 Copparo (FE), Italia",
+                "Email: info@pesmed.it"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Non è stato nominato un Responsabile della Protezione dei Dati (DPO), in quanto non richiesto dalla normativa applicabile."
+            }
+          ]
+        },
+        {
+          "id": "pp-2",
+          "number": "2",
+          "title": "Tipologie di dati raccolti",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Raccogliamo una quantità minima di dati personali."
+            },
+            {
+              "type": "subsection",
+              "title": "a) Dati forniti volontariamente",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Indirizzo email, solo quando ci contatti via email (link mailto)."
+                }
+              ]
+            },
+            {
+              "type": "subsection",
+              "title": "b) Dati raccolti automaticamente",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Tramite Cloudflare Analytics, possiamo raccogliere:"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    "Dati di utilizzo aggregati e anonimizzati",
+                    "Informazioni su dispositivo e browser (non identificative)",
+                    "Dati di localizzazione approssimativi e anonimizzati"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "callout",
+              "variant": "warning",
+              "title": "Non raccogliamo:",
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    "Nomi",
+                    "Numeri di telefono",
+                    "Indirizzi",
+                    "Dati di pagamento",
+                    "Dati di account",
+                    "Contenuti generati dagli utenti"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-3",
+          "number": "3",
+          "title": "Come vengono raccolti i dati",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "I dati vengono raccolti esclusivamente tramite:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Comunicazione diretta: quando ci invii un’email",
+                "Raccolta automatica: tramite Cloudflare Analytics",
+                "Risorse di terze parti: uso di Google Fonts"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Non utilizziamo:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Form",
+                "Account utente",
+                "Cookie o tecnologie di tracciamento"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-4",
+          "number": "4",
+          "title": "Finalità del trattamento",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Trattiamo i dati esclusivamente per le seguenti finalità:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Rispondere alle richieste degli utenti (assistenza)",
+                "Fornire e mantenere il sito web",
+                "Analizzare le performance del sito e migliorare i servizi (tramite Cloudflare Analytics)"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Non utilizziamo i dati per:"
+            },
+            {
+              "type": "list",
+              "items": ["Marketing", "Profilazione", "Decisioni automatizzate"]
+            }
+          ]
+        },
+        {
+          "id": "pp-5",
+          "number": "5",
+          "title": "Base giuridica del trattamento (GDPR)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Trattiamo i dati personali sulla base di:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Legittimo interesse (Art. 6(1)(f) GDPR): per garantire il corretto funzionamento, la sicurezza e il miglioramento del sito web.",
+                "Misure precontrattuali (Art. 6(1)(b) GDPR): quando rispondiamo alle richieste inviate dagli utenti via email."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Non facciamo affidamento sul consenso per tracciamento o cookie, poiché non utilizziamo tali tecnologie."
+            }
+          ]
+        },
+        {
+          "id": "pp-6",
+          "number": "6",
+          "title": "Condivisione dei dati",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Non vendiamo né divulghiamo dati personali."
+            },
+            {
+              "type": "paragraph",
+              "text": "Tuttavia, dati limitati possono essere trattati da fornitori di servizi fidati:"
+            },
+            {
+              "type": "providers",
+              "items": [
+                {
+                  "name": "Cloudflare, Inc.",
+                  "details": [
+                    "Hosting (Cloudflare Pages)",
+                    "Analytics (privacy-focused, no cookies)"
+                  ]
+                },
+                {
+                  "name": "Google Fonts",
+                  "details": [
+                    "Utilizzati per visualizzare la tipografia del sito."
+                  ]
+                },
+                {
+                  "name": "Alpine.js (CDN)",
+                  "details": [
+                    "Utilizzato per abilitare funzionalità interattive sul sito."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Questi fornitori trattano i dati in conformità alle rispettive privacy policy."
+            }
+          ]
+        },
+        {
+          "id": "pp-7",
+          "number": "7",
+          "title": "Trasferimenti internazionali di dati",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Alcuni servizi che utilizziamo (ad es. Cloudflare, Google) possono trasferire dati al di fuori dello Spazio Economico Europeo (SEE)."
+            },
+            {
+              "type": "paragraph",
+              "text": "In tali casi, i trasferimenti sono tutelati tramite:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea",
+                "Oppure altri meccanismi di trasferimento leciti previsti dal GDPR"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-8",
+          "number": "8",
+          "title": "Conservazione dei dati",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Conserviamo i dati solo per il tempo necessario:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Email: conservate per il tempo necessario a rispondere e gestire le comunicazioni",
+                "Dati analytics: gestiti da Cloudflare secondo le proprie politiche di conservazione"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Non conserviamo dati identificativi degli utenti sui nostri sistemi."
+            }
+          ]
+        },
+        {
+          "id": "pp-9",
+          "number": "9",
+          "title": "Diritti dell’utente",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ai sensi del GDPR, hai diritto di:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Accedere ai tuoi dati",
+                "Rettificare dati inesatti",
+                "Richiedere la cancellazione (diritto all’oblio)",
+                "Limitare il trattamento",
+                "Portabilità dei dati",
+                "Opporti al trattamento",
+                "Revocare il consenso (se applicabile)"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Per esercitare i tuoi diritti, contatta: info@pesmed.it"
+            },
+            {
+              "type": "callout",
+              "variant": "note",
+              "title": "Nota",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Poiché raccogliamo dati personali minimi o nulli, l’esercizio di tali diritti può essere limitato nella pratica."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-10",
+          "number": "10",
+          "title": "Cookie",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Non utilizziamo cookie o tecnologie simili di tracciamento."
+            }
+          ]
+        },
+        {
+          "id": "pp-11",
+          "number": "11",
+          "title": "Misure di sicurezza",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Implementiamo misure tecniche e organizzative adeguate, tra cui:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Crittografia dei dati",
+                "Sistemi di controllo degli accessi",
+                "Infrastruttura di hosting sicura (Cloudflare)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pp-12",
+          "number": "12",
+          "title": "Dati dei minori",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Il nostro sito non è destinato ai minori e non raccogliamo consapevolmente dati da minori."
+            }
+          ]
+        },
+        {
+          "id": "pp-13",
+          "number": "13",
+          "title": "Modifiche alla presente Privacy Policy",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Potremmo aggiornare la presente Privacy Policy di tanto in tanto."
+            },
+            {
+              "type": "paragraph",
+              "text": "Eventuali modifiche saranno pubblicate su questa pagina con una data di revisione aggiornata."
+            }
+          ]
+        },
+        {
+          "id": "pp-14",
+          "number": "14",
+          "title": "Contatti",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Per qualsiasi domanda relativa alla presente Privacy Policy:"
+            },
+            {
+              "type": "paragraph",
+              "text": "PES MED S.c.a.r.l., Copparo (FE), Italia"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
