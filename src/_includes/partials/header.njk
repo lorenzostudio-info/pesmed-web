@@ -23,11 +23,15 @@
           {% endfor %}
         </div>
         {# Mobile hamburger #}
-        <button @click="open = !open" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
-          <svg x-show="!open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button @click="open = !open"
+          class="md:hidden inline-flex items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black/30 rounded-md min-h-[44px] min-w-[44px] px-2"
+          aria-label="Toggle menu"
+          aria-controls="mobile-menu"
+          :aria-expanded="open ? 'true' : 'false'">
+          <svg x-show="!open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
-          <svg x-show="open" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg x-show="open" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
@@ -35,7 +39,7 @@
     </div>
 
     {# Mobile menu #}
-    <div x-show="open" x-cloak @click.outside="open = false" class="md:hidden pb-4">
+    <div id="mobile-menu" x-show="open" x-cloak @click.outside="open = false" class="md:hidden pb-4">
       <nav class="flex flex-col space-y-2 bg-black/65 backdrop-blur-md border border-white/15 rounded-lg p-3 shadow-lg">
         <a href="{{ '/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].home }}</a>
         <a href="{{ '/products/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].products }}</a>
