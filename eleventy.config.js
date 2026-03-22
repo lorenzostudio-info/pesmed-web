@@ -89,6 +89,8 @@ export default async function (eleventyConfig) {
       "assets/vendor/fonts/league-spartan",
   });
 
+  eleventyConfig.addPassthroughCopy("_redirects");
+
   return {
     dir: {
       input: "src",
