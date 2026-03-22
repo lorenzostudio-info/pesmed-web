@@ -1,13 +1,81 @@
 /* Custom styles for small UI helpers that are not covered by Tailwind utilities */
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+/* League Spartan (local)
+   Font files are served via Eleventy passthrough from:
+   node_modules/@fontsource/league-spartan/files
+   and exposed at:
+   /assets/vendor/fonts/league-spartan/
+
+   Keep the same typography as before: 'League Spartan', sans-serif
+*/
+@font-face {
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src:
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-300-normal.woff2")
+            format("woff2"),
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-300-normal.woff")
+            format("woff");
+}
+
+@font-face {
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-400-normal.woff2")
+            format("woff2"),
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-400-normal.woff")
+            format("woff");
+}
+
+@font-face {
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-500-normal.woff2")
+            format("woff2"),
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-500-normal.woff")
+            format("woff");
+}
+
+@font-face {
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src:
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-600-normal.woff2")
+            format("woff2"),
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-600-normal.woff")
+            format("woff");
+}
+
+@font-face {
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-700-normal.woff2")
+            format("woff2"),
+        url("/assets/vendor/fonts/league-spartan/league-spartan-latin-700-normal.woff")
+            format("woff");
 }
 
 body {
-  font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", sans-serif;
 }
 
 [x-cloak] {
-  display: none !important;
+    display: none !important;
 }

@@ -105,7 +105,7 @@
               "items": [
                 "Direct communication: when you send us an email",
                 "Automatic collection: via Cloudflare Analytics",
-                "Third-party resources: use of Google Fonts"
+                "Third-party resources: none (fonts and scripts are served locally)"
               ]
             },
             {
@@ -188,20 +188,16 @@
               "type": "providers",
               "items": [
                 {
-                  "name": "Cloudflare, Inc.",
+                  "name": "Cloudflare Pages",
                   "details": [
                     "Hosting (Cloudflare Pages)",
                     "Analytics (privacy-focused, no cookies)"
                   ]
                 },
                 {
-                  "name": "Google Fonts",
-                  "details": ["Used to display the website typography."]
-                },
-                {
-                  "name": "Alpine.js (CDN)",
+                  "name": "Local assets (fonts and scripts)",
                   "details": [
-                    "Used to enable interactive features on the website."
+                    "Typography and interactive scripts are served directly by this website (no third-party CDN requests)."
                   ]
                 }
               ]
@@ -466,7 +462,7 @@
               "items": [
                 "Comunicazione diretta: quando ci invii un’email",
                 "Raccolta automatica: tramite Cloudflare Analytics",
-                "Risorse di terze parti: uso di Google Fonts"
+                "Risorse di terze parti: nessuna (font e script sono serviti localmente)"
               ]
             },
             {
@@ -549,22 +545,16 @@
               "type": "providers",
               "items": [
                 {
-                  "name": "Cloudflare, Inc.",
+                  "name": "Cloudflare Pages",
                   "details": [
                     "Hosting (Cloudflare Pages)",
                     "Analytics (privacy-focused, no cookies)"
                   ]
                 },
                 {
-                  "name": "Google Fonts",
+                  "name": "Asset locali (font e script)",
                   "details": [
-                    "Utilizzati per visualizzare la tipografia del sito."
-                  ]
-                },
-                {
-                  "name": "Alpine.js (CDN)",
-                  "details": [
-                    "Utilizzato per abilitare funzionalità interattive sul sito."
+                    "Tipografia e script interattivi sono serviti direttamente da questo sito (nessuna richiesta a CDN di terze parti)."
                   ]
                 }
               ]

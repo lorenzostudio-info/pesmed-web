@@ -22,6 +22,7 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@fontsource/league-spartan": "^5.2.8",
     "alpinejs": "^3.15.8"
   },
   "devDependencies": {
