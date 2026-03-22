@@ -83,6 +83,10 @@ export default async function (eleventyConfig) {
     "node_modules/alpinejs/dist": "assets/vendor/alpine",
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "_redirects": "_redirects",
+  });
+
   // League Spartan font files (served from /assets/vendor/fonts/league-spartan/)
   eleventyConfig.addPassthroughCopy({
     "node_modules/@fontsource/league-spartan/files":
