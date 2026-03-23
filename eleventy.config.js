@@ -31,7 +31,7 @@ export default async function (eleventyConfig) {
       language: "en",
       title: "PesMed News (EN)",
       subtitle: "Latest news and events from PesMed.",
-      base: "https://pesmed.lorenzostudio.info/",
+      base: "https://pesmed.it/",
       author: { name: "PesMed" },
     },
   });
@@ -44,7 +44,7 @@ export default async function (eleventyConfig) {
       language: "it",
       title: "PesMed News (IT)",
       subtitle: "Ultime notizie ed eventi da PesMed.",
-      base: "https://pesmed.lorenzostudio.info/",
+      base: "https://pesmed.it/",
       author: { name: "PesMed" },
     },
   });
@@ -84,7 +84,7 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy({
-    "_redirects": "_redirects",
+    _redirects: "_redirects",
   });
 
   // League Spartan font files (served from /assets/vendor/fonts/league-spartan/)

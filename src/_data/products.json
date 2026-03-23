@@ -32,11 +32,11 @@
     "brochures": [
       {
         "name": "ProSense Quick Reference Guide",
-        "url": "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/10/DMS-23014_Rev-B-A4_Probe-Brochure.pdf"
+        "url": "/assets/documents/prosense-quick-reference-guide.pdf"
       },
       {
         "name": "ProSense Product Informations",
-        "url": "https://pesmed.lorenzostudio.info/wp-content/uploads/2025/10/ProSense_Product_Brochure_10853_-Rev_-D_printcopy.pdf"
+        "url": "/assets/documents/prosense-product-information-brochure.pdf"
       }
     ],
     "youtubeChannel": "https://www.youtube.com/channel/UClq8QWZZDfNYwfKl6GSXRmw",
