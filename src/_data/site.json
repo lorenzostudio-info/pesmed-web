@@ -1,12 +1,12 @@
 {
   "name": "PesMed",
-  "url": "https://pesmed.it",
+  "url": "https://www.pesmed.it",
   "author": "PesMed",
   "description": "Pes Med is an Italian company with a deep expertise in the distribution organisation for the medical device business.",
   "defaultlang": "it",
-  "email": "contact@pesmed.it",
-  "phone": "+31 123 456 7890",
-  "address": "2946 Angus Road, NY",
+  "email": "info@pesmed.it",
+  "phone": "+39 393 332 0250",
+  "address": "Piazza del Popolo 8/D, 44034, Copparo (FE), Italy",
   "logo": "/assets/images/logo.png",
   "footerLogo": "/assets/images/logo.png"
 }
