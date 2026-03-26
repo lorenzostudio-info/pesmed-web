@@ -77,12 +77,6 @@ export default async function (eleventyConfig) {
   // Passtrough
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
-  // Vendor assets (served locally from node_modules via passthrough)
-  // AlpineJS bundle (copied to /assets/vendor/alpine/)
-  eleventyConfig.addPassthroughCopy({
-    "node_modules/alpinejs/dist": "assets/vendor/alpine",
-  });
-
   eleventyConfig.addPassthroughCopy({
     _redirects: "_redirects",
   });
@@ -93,7 +87,8 @@ export default async function (eleventyConfig) {
       "assets/vendor/fonts/league-spartan",
   });
 
-  eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy({ "_redirects": "_redirects" });
+  eleventyConfig.addPassthroughCopy({ "node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
 
   return {
     dir: {
