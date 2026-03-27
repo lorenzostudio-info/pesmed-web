@@ -4,7 +4,9 @@ layout: layouts/base.njk
 
 {# Product detail layout #}
 
-{% set productData = products | findBySlug(productSlug) %}
+{# `src/*/products/product.njk` paginates `products` with alias `product`.
+  Use that directly to avoid mis-resolution when `productSlug` is missing. #}
+{% set productData = product %}
 
 {% set breadcrumbs = [{label: translations[lang].products, url: '/products/' | locale_url}, {label: productData.name[lang] if productData.name[lang] else title}] %}
 {% include "partials/breadcrumb.njk" %}

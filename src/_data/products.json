@@ -277,6 +277,247 @@
     }
   },
   {
+    "slug": "nanoknife",
+    "eleventyPaginationGroupNumber": "nanoknife",
+    "number": "05",
+    "category": "electroporation-therapy",
+    "name": {
+      "en": "NanoKnife",
+      "it": "NanoKnife"
+    },
+    "subtitle": {
+      "en": "Irreversible Electroporation",
+      "it": "Elettroporazione Irreversibile"
+    },
+    "manufacturer": "NanoKnife™",
+    "manufacturerUrl": "https://armandostabileurologo.com/",
+    "image": "/assets/images/products/nanoknife-01.png",
+    "images": [
+      "/assets/images/products/nanoknife-01.png"
+    ],
+    "description": {
+      "en": "NanoKnife™ is a non-thermal ablation platform based on irreversible electroporation, designed to treat tumors in complex anatomical sites while preserving critical structures.",
+      "it": "L’elettroporazione irreversibile con tecnologia Nanoknife™ rappresenta un’evoluzione nell’ablazione tumorale: una piattaforma non termica pensata per sedi anatomiche complesse e per preservare strutture critiche."
+    },
+    "contentSections": {
+      "en": [
+        {
+          "title": "Irreversible Electroporation: NanoKnife",
+          "paragraphs": [
+            "Non-thermal oncologic ablation.",
+            "Irreversible electroporation (IRE) with NanoKnife™ technology represents a technological evolution in tumor ablation.",
+            "A non-thermal platform designed to treat tumors in complex anatomical sites where traditional techniques show limitations.",
+            "NanoKnife™ does not use heat: it acts at cellular level, inducing apoptosis while preserving the integrity of vascular and biliary structures.",
+            "Precision. Preservation. Control. Key features of NanoKnife™ technology:"
+          ],
+          "items": [
+            "Non-thermal ablation",
+            "Preservation of neurovascular bundles",
+            "Reduced functional impact",
+            "Intermediate option between active surveillance and radical surgery",
+            "Possibility of re-treatment"
+          ]
+        },
+        {
+          "title": "NanoKnife™ technology in prostate cancer",
+          "paragraphs": [
+            "High-precision focal therapy. Redefines the treatment of localized prostate cancer.",
+            "In selected prostate cancer, NanoKnife™ enables a targeted focal approach, preserving anatomical structures responsible for urinary and erectile function.",
+            "NanoKnife™ introduces a quality-of-life oriented model, maintaining oncologic control and treatment selectivity."
+          ]
+        }
+      ],
+      "it": [
+        {
+          "title": "Elettroporazione Irreversibile: Nanoknife",
+          "paragraphs": [
+            "L'ablazione oncologica non termica.",
+            "L’elettroporazione irreversibile con tecnologia Nanoknife™, rappresenta un’evoluzione tecnologica nell’ambito dell’ablazione tumorale.",
+            "Una piattaforma non termica progettata per trattare tumori in sedi complesse dove le tecniche tradizionali mostrano limiti tecnologici.",
+            "La tecnologia Nanoknife™ non utilizza il calore ed agisce a livello cellulare, inducendo apoptosi e preservando l’integrità delle strutture vascolari e biliari.",
+            "Precisione. Preservazione. Controllo. Le caratteristiche uniche della tecnologia Nanoknife™:"
+          ],
+          "items": [
+            "Ablazione non termica",
+            "Preservazione dei fasci neurovascolari",
+            "Riduzione dell’impatto funzionale",
+            "Opzione intermedia tra sorveglianza attiva e chirurgia radicale",
+            "Possibilità di re-trattamento"
+          ]
+        },
+        {
+          "title": "Tecnologia Nanoknife™ nel carcinoma prostatico",
+          "paragraphs": [
+            "Terapia focale con precisione elevata. Ridefinisce il trattamento del tumore prostatico localizzato.",
+            "Nel carcinoma prostatico selezionato, la tecnologia Nanoknife™ consente un approccio focale mirato, preservando le strutture anatomiche responsabili della funzione urinaria ed erettile.",
+            "La tecnologia Nanoknife™ introduce un modello terapeutico orientato alla qualità di vita, mantenendo controllo oncologico e selettività del trattamento."
+          ]
+        }
+      ]
+    },
+    "externalLinks": [
+      {
+        "label": "https://armandostabileurologo.com/",
+        "url": "https://armandostabileurologo.com/"
+      }
+    ]
+  },
+  {
+    "slug": "solero",
+    "eleventyPaginationGroupNumber": "solero",
+    "number": "06",
+    "category": "cryotherapy-ablation",
+    "name": {
+      "en": "SOLERO™",
+      "it": "SOLERO™"
+    },
+    "subtitle": {
+      "en": "Controlled thermal power",
+      "it": "Potenza termica controllata"
+    },
+    "manufacturer": "SOLERO™",
+    "image": "https://placehold.co/1200x800/png?text=SOLERO+Image+1",
+    "images": [
+      "https://placehold.co/1200x800/png?text=SOLERO+Image+1",
+      "https://placehold.co/1200x800/png?text=SOLERO+Image+2",
+      "https://placehold.co/1200x800/png?text=SOLERO+Image+3"
+    ],
+    "description": {
+      "en": "Solero™ is a microwave ablation system designed for fast, predictable, and standardized treatments.",
+      "it": "Solero™ è un sistema di ablazione a microonde progettato per trattamenti rapidi, prevedibili e standardizzabili."
+    },
+    "contentSections": {
+      "en": [
+        {
+          "title": "SOLERO™ - Controlled thermal power",
+          "paragraphs": [
+            "Solero™ is a microwave ablation system designed for fast, predictable, and standardized treatments.",
+            "The generator operates at 2.45 GHz with power up to 140 W and programmable cycles from 2 to 6 minutes.",
+            "The applicator stands out for:"
+          ],
+          "items": [
+            "Insulated body with internal cooling",
+            "Distal temperature sensor",
+            "15G diameter with depth markers",
+            "Atraumatic trocar tip",
+            "Available in different lengths to fit different clinical scenarios"
+          ]
+        },
+        {
+          "title": "Ideal for",
+          "items": [
+            "Hepatic, renal, and lung lesions",
+            "Metastases treatable with a thermal approach",
+            "Procedures where speed and ablation volume are priorities"
+          ]
+        }
+      ],
+      "it": [
+        {
+          "title": "SOLERO™ - Potenza termica controllata",
+          "paragraphs": [
+            "Solero™ è un sistema di ablazione a microonde progettato per trattamenti rapidi, prevedibili e standardizzabili.",
+            "Il generatore opera a 2,45 GHz con potenza fino a 140 W e cicli programmabili da 2 a 6 minuti.",
+            "L’applicatore si differenzia per:"
+          ],
+          "items": [
+            "Corpo isolato con raffreddamento interno",
+            "Sensore di temperatura distale",
+            "Diametro 15G con marcatori di profondità",
+            "Punta trocar atraumatica",
+            "Disponibile in diverse lunghezze per adattarsi ai diversi scenari clinici"
+          ]
+        },
+        {
+          "title": "Ideale per",
+          "items": [
+            "Lesioni epatiche, renali e polmonari",
+            "Metastasi trattabili con approccio termico",
+            "Procedure in cui rapidità ed estensione ablativa sono prioritarie"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "pearltechnology",
+    "eleventyPaginationGroupNumber": "pearltechnology",
+    "number": "07",
+    "category": "surgical-navigation-imaging",
+    "name": {
+      "en": "PearlTechnology",
+      "it": "PearlTechnology"
+    },
+    "subtitle": {
+      "en": "Patient positioning",
+      "it": "Posizionamento paziente"
+    },
+    "manufacturer": "Pearl Technology AG",
+    "image": "/assets/images/products/pearltechnology-01.png",
+    "images": [
+      "/assets/images/products/pearltechnology-01.png",
+      "/assets/images/products/pearltechnology-02.png",
+      "/assets/images/products/pearltechnology-03.png",
+      "/assets/images/products/pearltechnology-04.png"
+    ],
+    "description": {
+      "en": "Pearl Technology AG specializes in the field of patient positioning for medical imaging and offers a broad range of durable, resistant and hygienic positioning aids for various applications.",
+      "it": "Pearl Technology AG è specializzata nel posizionamento del paziente per l'imaging medico e offre un'ampia gamma di ausili di posizionamento durevoli, resistenti e igienici."
+    },
+    "moreInfo": {
+      "en": "Brochure available for download:",
+      "it": "Brochure disponibili per il download:"
+    },
+    "brochures": [
+      {
+        "name": "PearlTec Brochure 1",
+        "url": "/assets/documents/pearltec-brochure-1.pdf"
+      },
+      {
+        "name": "PearlTec Brochure 2",
+        "url": "/assets/documents/pearltec-brochure-2.pdf"
+      }
+    ],
+    "contentSections": {
+      "en": [
+        {
+          "title": "PearlTechnology: patient positioning",
+          "paragraphs": [
+            "Pearl Technology AG specializes in the field of patient positioning for medical imaging and offers a broad range of durable, resistant and hygienic positioning aids for various applications.",
+            "Pearltec positioning aids are medical devices class 1 and are CE-labeled accordingly.",
+            "High requirements:"
+          ],
+          "items": [
+            "High patient throughput often coupled with long exam times",
+            "Patient must be positioned comfortably and stable",
+            "Positioning aids must be hygienic and hard-wearing",
+            "Easy to clean",
+            "Uniform adaptation to the patient anatomy",
+            "High durability"
+          ]
+        }
+      ],
+      "it": [
+        {
+          "title": "PearlTechnology: posizionamento del paziente",
+          "paragraphs": [
+            "Pearl Technology AG è specializzata nel posizionamento del paziente per l'imaging medico e offre un'ampia gamma di ausili di posizionamento durevoli, resistenti e igienici per diverse applicazioni.",
+            "Gli ausili di posizionamento Pearltec sono dispositivi medici di classe 1 e sono quindi marcati CE.",
+            "Requisiti elevati:"
+          ],
+          "items": [
+            "Alto turnover dei pazienti spesso associato a tempi di esame prolungati",
+            "Il paziente deve essere posizionato in modo confortevole e stabile",
+            "Gli ausili di posizionamento devono essere igienici e resistenti",
+            "Facili da pulire",
+            "Adattamento uniforme all'anatomia del paziente",
+            "Elevata durabilità"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "slug": "patient-positioning-ifix",
     "eleventyPaginationGroupNumber": "patient-positioning-ifix",
     "number": "05",
