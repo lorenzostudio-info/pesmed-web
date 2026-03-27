@@ -9,7 +9,27 @@
       {# Desktop nav #}
       <nav class="hidden md:flex items-center space-x-8">
         <a href="{{ '/' | locale_url }}" class="text-white/95 hover:text-white font-medium transition-colors">{{ translations[lang].home }}</a>
-        <a href="{{ '/products/' | locale_url }}" class="text-white/95 hover:text-white font-medium transition-colors">{{ translations[lang].products }}</a>
+
+        {# Technologies submenu (all links go to products page) #}
+        <div class="relative" x-data="{ openTech: false }" @mouseenter="openTech = true" @mouseleave="openTech = false">
+          <a href="{{ '/products/' | locale_url }}" class="text-white/95 hover:text-white font-medium transition-colors inline-flex items-center gap-2" aria-haspopup="true" :aria-expanded="openTech ? 'true' : 'false'">
+            {{ translations[lang].products }}
+            <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+          {# Safe hover area to prevent accidental close while moving cursor #}
+          <div x-show="openTech" x-cloak class="absolute left-1/2 -translate-x-1/2 top-full w-72 pt-3" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1">
+            <div class="rounded-xl bg-black/65 backdrop-blur-md border border-white/15 shadow-lg overflow-hidden">
+              <div class="py-2">
+                <a href="{{ '/products/' | locale_url }}" class="block px-4 py-2 text-sm text-white/95 hover:text-white hover:bg-white/10 text-center">{{ translations[lang].technologyFamilies.ablations }}</a>
+                <a href="{{ '/products/' | locale_url }}" class="block px-4 py-2 text-sm text-white/95 hover:text-white hover:bg-white/10 text-center">{{ translations[lang].technologyFamilies.roboticsAi }}</a>
+                <a href="{{ '/products/' | locale_url }}" class="block px-4 py-2 text-sm text-white/95 hover:text-white hover:bg-white/10 text-center">{{ translations[lang].technologyFamilies.patientComfort }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="{{ '/news/' | locale_url }}" class="text-white/95 hover:text-white font-medium transition-colors">{{ translations[lang].articles }}</a>
         <a href="{{ '/contact/' | locale_url }}" class="text-white/95 hover:text-white font-medium transition-colors">{{ translations[lang].contact }}</a>
       </nav>
@@ -42,7 +62,16 @@
     <div id="mobile-menu" x-show="open" x-cloak @click.outside="open = false" class="md:hidden pb-4">
       <nav class="flex flex-col space-y-2 bg-black/65 backdrop-blur-md border border-white/15 rounded-lg p-3 shadow-lg">
         <a href="{{ '/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].home }}</a>
-        <a href="{{ '/products/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].products }}</a>
+
+        <div class="pt-1">
+          <a href="{{ '/products/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium block">{{ translations[lang].products }}</a>
+          <div class="ml-3 mt-1 pl-3 border-l border-white/15 flex flex-col">
+            <a href="{{ '/products/' | locale_url }}" class="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium text-sm">{{ translations[lang].technologyFamilies.ablations }}</a>
+            <a href="{{ '/products/' | locale_url }}" class="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium text-sm">{{ translations[lang].technologyFamilies.roboticsAi }}</a>
+            <a href="{{ '/products/' | locale_url }}" class="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium text-sm">{{ translations[lang].technologyFamilies.patientComfort }}</a>
+          </div>
+        </div>
+
         <a href="{{ '/news/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].articles }}</a>
         <a href="{{ '/contact/' | locale_url }}" class="text-white/95 hover:text-white hover:bg-white/10 px-3 py-2 rounded font-medium">{{ translations[lang].contact }}</a>
         <div class="flex items-center space-x-2 pt-2 border-t border-white/10 mt-2">
