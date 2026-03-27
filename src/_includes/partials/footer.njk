@@ -5,7 +5,7 @@
 
     {# Top section: logo + tagline | links grid | contact card #}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-start">
         {# Col 1 – Brand and contact (always visible) #}
         <div class="flex flex-col gap-5">
           <img src="{{ site.footerLogo }}" alt="{{ site.name }}" class="h-20 w-auto brightness-200">
@@ -33,21 +33,7 @@
             </span>
           </div>
         </div>
-        {# Col 2 – Products (hidden on mobile) #}
-        <div class="hidden md:block">
-          <h4 class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-5">{{ translations[lang].products }}</h4>
-          <ul class="space-y-3 text-sm">
-            {% for product in products %}
-              <li>
-                <a href="{{ '/products/' | locale_url }}{{ product.slug }}/" class="flex items-center gap-2 text-blue-100/75 hover:text-white transition-colors group">
-                  <span class="w-1 h-1 rounded-full bg-blue-400 group-hover:bg-white transition-colors shrink-0"></span>
-                  {{ product.name[lang] | default(product.name.it) }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        {# Col 3 – Navigation + CTA (hidden on mobile) #}
+        {# Col 2 – Navigation + CTA (hidden on mobile) #}
         <div class="hidden md:flex flex-col gap-8">
           <div>
             <h4 class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-5">{{ translations[lang].followUs }}</h4>
