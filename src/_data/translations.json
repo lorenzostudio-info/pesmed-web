@@ -2,7 +2,7 @@
   "en": {
     "siteTitle": "PesMed",
     "home": "Home",
-    "products": "Products",
+    "products": "Technologies",
     "articles": "News",
     "contact": "Contact Us",
     "language": "Language",
@@ -11,9 +11,9 @@
     "heroSubtitleBold": "Always Get",
     "heroSubtitle2": " The Best Results.",
     "aboutTitle": "About PesMed",
-    "aboutText": "Pes Med is an Italian company with a deep expertise in the distribution organisation for the medical device business.",
-    "productsTitle": "Explore our products",
-    "productsIntro": "PesMed product range provides patients with benefits by being the leader in research, development, manufacturing and innovative design. Medical devices currently used by surgery and interventional radiology specialist for the minimally invasive treatment of oncology patients.",
+    "aboutText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "productsTitle": "Technologies",
+    "productsIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "newsTitle": "News",
     "readMore": "Read More",
     "contactTitle": "Contact Us",
@@ -61,23 +61,28 @@
       "electroporation-therapy": "Electroporation Therapy",
       "surgical-navigation-imaging": "Surgical Navigation & Imaging"
     },
+    "technologyFamilies": {
+      "ablations": "Ablations",
+      "roboticsAi": "Robotics & AI",
+      "patientComfort": "Patient Comfort"
+    },
     "followOnLinkedIn": "Follow on LinkedIn"
   },
   "it": {
     "siteTitle": "PesMed",
     "home": "Home",
-    "products": "Prodotti",
+    "products": "Tecnologie",
     "articles": "News",
-    "contact": "Contatti",
+    "contact": "Contattaci",
     "language": "Lingua",
     "heroWelcome": "BENVENUTI IN PESMED",
     "heroSubtitle1": "Vi garantiamo ",
     "heroSubtitleBold": "sempre",
     "heroSubtitle2": " i migliori risultati.",
     "aboutTitle": "Chi siamo",
-    "aboutText": "Pes Med è un'azienda italiana con una profonda competenza nell'organizzazione della distribuzione per il settore dei dispositivi medici.",
-    "productsTitle": "Scopri i nostri prodotti",
-    "productsIntro": "La gamma di prodotti PesMed offre ai pazienti vantaggi grazie alla leadership nella ricerca, sviluppo, produzione e design innovativo. Dispositivi medici attualmente utilizzati da specialisti in chirurgia e radiologia interventistica per il trattamento mini-invasivo di pazienti oncologici.",
+    "aboutText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "productsTitle": "Tecnologie",
+    "productsIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "newsTitle": "News",
     "readMore": "Leggi di più",
     "contactTitle": "Contattaci",
@@ -124,6 +129,11 @@
       "cryotherapy-ablation": "Crioterapia & Ablazione",
       "electroporation-therapy": "Terapia di Elettroporazione",
       "surgical-navigation-imaging": "Navigazione Chirurgica & Imaging"
+    },
+    "technologyFamilies": {
+      "ablations": "Ablazioni",
+      "roboticsAi": "Robotica & IA",
+      "patientComfort": "Patient Comfort"
     },
     "followOnLinkedIn": "Seguici su LinkedIn"
   }
