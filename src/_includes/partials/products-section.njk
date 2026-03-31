@@ -136,7 +136,7 @@
         {% endif %}
       </div>
 
-      <div class="products-heading-row flex items-start mb-0 pb-4 pl-14 mt-10" style="border-bottom: 1px solid {{ '#e5e7eb' if (isHome or isProductsPage) else 'rgba(255,255,255,0.25)' }};">
+      <div class="products-heading-row products-row group flex items-center mb-0 py-5 pl-14" style="border-bottom: 1px solid {{ '#e5e7eb' if (isHome or isProductsPage) else 'rgba(255,255,255,0.25)' }};">
         <h3 class="products-cat-title text-xl md:text-2xl font-bold leading-tight tracking-wide {{ 'transition-colors duration-700 text-[#141570]' if isHome else ('text-gray-900' if isProductsPage else 'text-white') }}">
         {{ translations[lang].technologyFamilies.patientComfort }}
         </h3>
