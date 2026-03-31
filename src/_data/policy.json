@@ -193,12 +193,6 @@
                     "Hosting (Cloudflare Pages)",
                     "Analytics (privacy-focused, no cookies)"
                   ]
-                },
-                {
-                  "name": "Local assets (fonts and scripts)",
-                  "details": [
-                    "Typography and interactive scripts are served directly by this website (no third-party CDN requests)."
-                  ]
                 }
               ]
             },
@@ -215,7 +209,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Some services we use (e.g., Cloudflare, Google) may transfer data outside of the European Economic Area (EEA)."
+              "text": "Some services we use (e.g., Cloudflare) may transfer data outside of the European Economic Area (EEA)."
             },
             {
               "type": "paragraph",
@@ -550,12 +544,6 @@
                     "Hosting (Cloudflare Pages)",
                     "Analytics (privacy-focused, no cookies)"
                   ]
-                },
-                {
-                  "name": "Asset locali (font e script)",
-                  "details": [
-                    "Tipografia e script interattivi sono serviti direttamente da questo sito (nessuna richiesta a CDN di terze parti)."
-                  ]
                 }
               ]
             },
@@ -572,7 +560,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Alcuni servizi che utilizziamo (ad es. Cloudflare, Google) possono trasferire dati al di fuori dello Spazio Economico Europeo (SEE)."
+              "text": "Alcuni servizi che utilizziamo (ad es. Cloudflare) possono trasferire dati al di fuori dello Spazio Economico Europeo (SEE)."
             },
             {
               "type": "paragraph",
