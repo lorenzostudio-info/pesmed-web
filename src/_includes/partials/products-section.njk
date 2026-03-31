@@ -22,24 +22,22 @@
     </div>
 
     {# Client-requested families with explicit product membership (source of truth). #}
-    {# This preserves product pages/categories while ensuring the 3 columns match the brief. #}
-    {% set familySlugMap = {
-      "ablations": [
-        "cryotherapy-prosense",
-        "nanoknife",
-        "endoscopic-electroporation-endove",
-        "cutaneous-electroporation-cutis",
-        "solero"
-      ],
-      "roboticsAi": [
-        "robotic-navigation-micromate",
-        "3d-ultrasound-tomography-piur"
-      ],
-      "patientComfort": [
-        "patient-positioning-ifix",
-        "pearltechnology"
-      ]
-    } %}
+    {# This preserves product pages/categories while ensuring the 2 columns match the brief. #}
+    {% set ablationsSlugs = [
+      "cryotherapy-prosense",
+      "nanoknife",
+      "endoscopic-electroporation-endove",
+      "cutaneous-electroporation-cutis",
+      "solero"
+    ] %}
+    {% set roboticsAiSlugs = [
+      "robotic-navigation-micromate",
+      "3d-ultrasound-tomography-piur"
+    ] %}
+    {% set patientComfortSlugs = [
+      "patient-positioning-ifix",
+      "pearltechnology"
+    ] %}
     {% set productIcons = {
       "cryotherapy-prosense": '<path d="M7 14C5.34315 14 4 15.3431 4 17C4 18.6569 5.34315 20 7 20C7.35064 20 7.68722 19.9398 8 19.8293" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.26392 15.6046C2.9243 14.9582 2.00004 13.587 2.00004 12C2.00004 10.7883 2.53877 9.70251 3.38978 8.96898" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.42053 8.8882C3.1549 8.49109 3 8.01363 3 7.5C3 6.11929 4.11929 5 5.5 5C6.06291 5 6.58237 5.18604 7.00024 5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.23769 5.56533C7.08524 5.24215 7 4.88103 7 4.5C7 3.11929 8.11929 2 9.5 2C10.8807 2 12 3.11929 12 4.5V20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20C8 21.1046 8.89543 22 10 22C11.1046 22 12 21.1046 12 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7C12 8.65685 13.3431 10 15 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.6102 8.96898C21.4612 9.70251 22 10.7883 22 12C22 12.7031 21.8186 13.3638 21.5 13.9379" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5795 8.8882C20.8451 8.49109 21 8.01363 21 7.5C21 6.11929 19.8807 5 18.5 5C17.9371 5 17.4176 5.18604 16.9998 5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4.5C12 3.11929 13.1193 2 14.5 2C15.8807 2 17 3.11929 17 4.5C17 4.88103 16.9148 5.24215 16.7623 5.56533" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 22C12.8954 22 12 21.1046 12 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 20.5L22 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 18.5C16 19.8807 17.1193 21 18.5 21C19.1916 21 19.8175 20.7192 20.2701 20.2654C20.7211 19.8132 21 19.1892 21 18.5C21 17.1193 19.8807 16 18.5 16C17.1193 16 16 17.1193 16 18.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>',
       "nanoknife": '<path d="M13.8476 13.317L9.50515 18.2798C8.70833 19.1905 7.29167 19.1905 6.49485 18.2798L2.15238 13.317C1.49259 12.563 1.49259 11.437 2.15238 10.683L6.49485 5.72018C7.29167 4.80952 8.70833 4.80952 9.50515 5.72017L13.8476 10.683C14.5074 11.437 14.5074 12.563 13.8476 13.317Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 19L17.8844 13.3016C18.5263 12.5526 18.5263 11.4474 17.8844 10.6984L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 19L21.8844 13.3016C22.5263 12.5526 22.5263 11.4474 21.8844 10.6984L17 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>',
@@ -52,54 +50,132 @@
       "biomarker-analysis-pearlfit": '<path d="M20 14C20 9.58172 12 2 12 2C12 2 4 9.58172 4 14C4 18.4183 7.58172 22 12 22C16.4183 22 20 18.4183 20 14Z" stroke="currentColor"/>',
       "3d-ultrasound-tomography-piur": '<path d="M22 8.86222C22 10.4087 21.4062 11.8941 20.3458 12.9929C17.9049 15.523 15.5374 18.1613 13.0053 20.5997C12.4249 21.1505 11.5042 21.1304 10.9488 20.5547L3.65376 12.9929C1.44875 10.7072 1.44875 7.01723 3.65376 4.73157C5.88044 2.42345 9.50794 2.42345 11.7346 4.73157L11.9998 5.00642L12.2648 4.73173C13.3324 3.6245 14.7864 3 16.3053 3C17.8242 3 19.2781 3.62444 20.3458 4.73157C21.4063 5.83045 22 7.31577 22 8.86222Z" stroke="currentColor" stroke-linejoin="round"/>'
     } %}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-      {% for familyKey, familySlugs in familySlugMap %}
-        {% set familyName = translations[lang].technologyFamilies[familyKey] %}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+      {# Left column: Ablations #}
+      <div class="products-column">
+      <div class="products-heading-row flex items-start mb-0 pb-4 pl-14" style="border-bottom: 1px solid {{ '#e5e7eb' if (isHome or isProductsPage) else 'rgba(255,255,255,0.25)' }};">
+        <h3 class="products-cat-title text-xl md:text-2xl font-bold leading-tight tracking-wide {{ 'transition-colors duration-700 text-[#141570]' if isHome else ('text-gray-900' if isProductsPage else 'text-white') }}">
+        {{ translations[lang].technologyFamilies.ablations }}
+        </h3>
+      </div>
 
-        <div class="products-column">
-          {# Category heading #}
-          <div class="products-heading-row flex items-start mb-0 pb-4 pl-14" style="border-bottom: 1px solid {{ '#e5e7eb' if (isHome or isProductsPage) else 'rgba(255,255,255,0.25)' }};">
-            <h3 class="products-cat-title text-xl md:text-2xl font-bold leading-tight tracking-wide {{ 'transition-colors duration-700 text-[#141570]' if isHome else ('text-gray-900' if isProductsPage else 'text-white') }}">
-              {{ familyName }}
-            </h3>
-          </div>
+      <div class="space-y-0">
+        {% if ablationsSlugs.length %}
+        {% for slug in ablationsSlugs %}
+          {% set product = products | findBySlug(slug) %}
+          {% if product %}
+          {% set icon = productIcons[product.slug] %}
+          <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}"
+             class="products-row group flex items-center py-5 {{ 'border-b border-gray-200' if (isHome or isProductsPage) else '' }}"
+             {% if not isHome and not isProductsPage %}style="border-bottom: 1px solid rgba(255,255,255,0.15);"{% endif %}
+          >
+            <div class="flex items-center gap-4 w-full">
+            <span class="products-leading-icon shrink-0 w-10 flex justify-center {{ 'transition-colors duration-700 text-[#2A65C1]' if isHome else ('text-gray-900' if isProductsPage else 'text-white/70') }}">
+              {% if icon %}
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">{{ icon | safe }}</svg>
+              {% else %}
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {% endif %}
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="products-name text-xl md:text-2xl font-light leading-tight {{ 'transition-colors duration-700 group-hover:opacity-80 text-[#141570]' if isHome else ('group-hover:opacity-80 text-gray-900' if isProductsPage else 'group-hover:opacity-80 text-white') }}">
+              {{ product.name[lang] | default(product.name.it) }}:
+              {{ product.subtitle[lang] | default(product.subtitle.it) }}
+              </p>
+              <p class="products-manufacturer text-sm mt-1 {{ 'transition-colors duration-700 text-gray-500' if isHome else ('text-gray-500' if isProductsPage else 'text-white/60') }}">
+              {{ product.manufacturer }}
+              </p>
+            </div>
+            </div>
+          </a>
+          {% endif %}
+        {% endfor %}
+        {% endif %}
+      </div>
+      </div>
 
-          {# Product list #}
-          <div class="space-y-0">
-            {% if familySlugs.length %}
-              {% for slug in familySlugs %}
-                {% set product = products | findBySlug(slug) %}
-                {% if product %}
-                  {% set icon = productIcons[product.slug] %}
-                  <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}"
-                     class="products-row group flex items-center py-5 {{ 'border-b border-gray-200' if (isHome or isProductsPage) else '' }}"
-                     {% if not isHome and not isProductsPage %}style="border-bottom: 1px solid rgba(255,255,255,0.15);"{% endif %}
-                  >
-                    <div class="flex items-center gap-4 w-full">
-                      <span class="products-leading-icon shrink-0 w-10 flex justify-center {{ 'transition-colors duration-700 text-[#2A65C1]' if isHome else ('text-gray-900' if isProductsPage else 'text-white/70') }}">
-                        {% if icon %}
-                          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">{{ icon | safe }}</svg>
-                        {% else %}
-                          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        {% endif %}
-                      </span>
-                      <div class="flex-1 min-w-0">
-                        <p class="products-name text-xl md:text-2xl font-light leading-tight {{ 'transition-colors duration-700 group-hover:opacity-80 text-[#141570]' if isHome else ('group-hover:opacity-80 text-gray-900' if isProductsPage else 'group-hover:opacity-80 text-white') }}">
-                          {{ product.name[lang] | default(product.name.it) }}:
-                          {{ product.subtitle[lang] | default(product.subtitle.it) }}
-                        </p>
-                        <p class="products-manufacturer text-sm mt-1 {{ 'transition-colors duration-700 text-gray-500' if isHome else ('text-gray-500' if isProductsPage else 'text-white/60') }}">
-                          {{ product.manufacturer }}
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
+      {# Right column: Robotics & AI + Patient Comfort in the same column #}
+      <div class="products-column">
+      <div class="products-heading-row flex items-start mb-0 pb-4 pl-14" style="border-bottom: 1px solid {{ '#e5e7eb' if (isHome or isProductsPage) else 'rgba(255,255,255,0.25)' }};">
+        <h3 class="products-cat-title text-xl md:text-2xl font-bold leading-tight tracking-wide {{ 'transition-colors duration-700 text-[#141570]' if isHome else ('text-gray-900' if isProductsPage else 'text-white') }}">
+        {{ translations[lang].technologyFamilies.roboticsAi }}
+        </h3>
+      </div>
+
+      <div class="space-y-0">
+        {% if roboticsAiSlugs.length %}
+        {% for slug in roboticsAiSlugs %}
+          {% set product = products | findBySlug(slug) %}
+          {% if product %}
+          {% set icon = productIcons[product.slug] %}
+          <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}"
+             class="products-row group flex items-center py-5 {{ 'border-b border-gray-200' if (isHome or isProductsPage) else '' }}"
+             {% if not isHome and not isProductsPage %}style="border-bottom: 1px solid rgba(255,255,255,0.15);"{% endif %}
+          >
+            <div class="flex items-center gap-4 w-full">
+            <span class="products-leading-icon shrink-0 w-10 flex justify-center {{ 'transition-colors duration-700 text-[#2A65C1]' if isHome else ('text-gray-900' if isProductsPage else 'text-white/70') }}">
+              {% if icon %}
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">{{ icon | safe }}</svg>
+              {% else %}
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {% endif %}
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="products-name text-xl md:text-2xl font-light leading-tight {{ 'transition-colors duration-700 group-hover:opacity-80 text-[#141570]' if isHome else ('group-hover:opacity-80 text-gray-900' if isProductsPage else 'group-hover:opacity-80 text-white') }}">
+              {{ product.name[lang] | default(product.name.it) }}:
+              {{ product.subtitle[lang] | default(product.subtitle.it) }}
+              </p>
+              <p class="products-manufacturer text-sm mt-1 {{ 'transition-colors duration-700 text-gray-500' if isHome else ('text-gray-500' if isProductsPage else 'text-white/60') }}">
+              {{ product.manufacturer }}
+              </p>
+            </div>
+            </div>
+          </a>
+          {% endif %}
+        {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="products-heading-row flex items-start mb-0 pb-4 pl-14 mt-10" style="border-bottom: 1px solid {{ '#e5e7eb' if (isHome or isProductsPage) else 'rgba(255,255,255,0.25)' }};">
+        <h3 class="products-cat-title text-xl md:text-2xl font-bold leading-tight tracking-wide {{ 'transition-colors duration-700 text-[#141570]' if isHome else ('text-gray-900' if isProductsPage else 'text-white') }}">
+        {{ translations[lang].technologyFamilies.patientComfort }}
+        </h3>
+      </div>
+
+      <div class="space-y-0">
+        {% if patientComfortSlugs.length %}
+        {% for slug in patientComfortSlugs %}
+          {% set product = products | findBySlug(slug) %}
+          {% if product %}
+          {% set icon = productIcons[product.slug] %}
+          <a href="{{ '/' + lang + '/products/' + product.slug + '/' }}"
+             class="products-row group flex items-center py-5 {{ 'border-b border-gray-200' if (isHome or isProductsPage) else '' }}"
+             {% if not isHome and not isProductsPage %}style="border-bottom: 1px solid rgba(255,255,255,0.15);"{% endif %}
+          >
+            <div class="flex items-center gap-4 w-full">
+            <span class="products-leading-icon shrink-0 w-10 flex justify-center {{ 'transition-colors duration-700 text-[#2A65C1]' if isHome else ('text-gray-900' if isProductsPage else 'text-white/70') }}">
+              {% if icon %}
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">{{ icon | safe }}</svg>
+              {% else %}
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {% endif %}
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="products-name text-xl md:text-2xl font-light leading-tight {{ 'transition-colors duration-700 group-hover:opacity-80 text-[#141570]' if isHome else ('group-hover:opacity-80 text-gray-900' if isProductsPage else 'group-hover:opacity-80 text-white') }}">
+              {{ product.name[lang] | default(product.name.it) }}:
+              {{ product.subtitle[lang] | default(product.subtitle.it) }}
+              </p>
+              <p class="products-manufacturer text-sm mt-1 {{ 'transition-colors duration-700 text-gray-500' if isHome else ('text-gray-500' if isProductsPage else 'text-white/60') }}">
+              {{ product.manufacturer }}
+              </p>
+            </div>
+            </div>
+          </a>
+          {% endif %}
+        {% endfor %}
+        {% endif %}
+      </div>
+      </div>
     </div>
   </div>
 </section>
